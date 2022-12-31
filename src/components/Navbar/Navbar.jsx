@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <div>
             <header className='relative z-20 mb-12 lg:mb-0'>
-                <div className="bg-gray-400 ">
+                <div className=" ">
                     <div className='flex items-center justify-between relative py-3 '>
                         <div className='flex justify-between container mx-auto pt-2 '>
                             <a href="#">
