@@ -4,30 +4,36 @@ import Product from '../Product/Product';
 
 const products = [
     {
+        id:1,
         img:Logo,
         title:'boAt Party Pal 50',
         price: 56
     },
     {
+        id:2,
         img:Logo,
         title:'boAt Party Pal 50',
         price: 56
     },
     {
+        id:3,
         img:Logo,
         title:'boAt Party Pal 50',
         price: 56
     },
     {
+        id:4,
         img:Logo,
         title:'boAt Party Pal 50',
         price: 56
     },
     {
+        id:5,
         img:Logo,
         title:'boAt Party Pal 50',
         price: 56
     }, {
+        id:6,
         img:Logo,
         title:'boAt Party Pal 50',
         price: 56
@@ -42,7 +48,7 @@ const Products = () => {
             </div>
             <div className='grid grid-cols-4 gap-4 justify-items-center'>
                {
-                products.map(pd=><Product pd={pd} />)
+                products.map(pd=><Product  pd={pd} key={pd.id} />)
                }
             </div>
         </div>
