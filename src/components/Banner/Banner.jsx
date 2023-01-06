@@ -7,7 +7,7 @@ const Banner = () => {
             <div>
                 <p className='text-xl'>Beats solo</p>
                 <h3 className='lg:text-[4rem] md:text-[3rem] max-sm:text-[2rem]  font-bold lg:mt-[-15px] '>Wireless</h3>
-                <h1 className='lg:ml-[-20px] md:ml-[-15px] lg:text-[10em] md:text-[6em] max-sm:text-[3em] uppercase text-[#ffffff] font-bold lg:mt-[-55px] md:mt-[-40px]'>HEADPHONE</h1>
+                <h1 className='lg:ml-[-20px] md:ml-[-15px] lg:text-[10em] md:text-[6em] max-sm:text-[3em] uppercase text-[#ffffff] font-bold lg:mt-[-55px] md:mt-[-40px] '>HEADPHONE</h1>
                 <img className='lg:h-[450px] lg:w-[450px] md:h-[350px] md:w-[350px] max-sm:h-[300px] max-sm:w-[250px] top-0 lg:right-[20%] md:right-[10%] max-sm:right-[0%] absolute'  src={BannerLogo} alt="" />
             </div>  
             <div className='flex'>
