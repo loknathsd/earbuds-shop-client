@@ -42,8 +42,8 @@ const products = [
 const Products = () => {
     return (
         <div className='container text-center mx-auto'>
-            <div>
-                <h1>Best Seller Products</h1>
+            <div className='mt-20 mb-10 text-[#324d67]'>
+                <h1 className='text-4xl font-bold mb-2 '>Best Seller Products</h1>
                 <p>speaker There are many variations passages</p>
             </div>
             <div className='grid grid-cols-4 gap-4 justify-items-center'>
