@@ -1,7 +1,6 @@
 import Logo from '../../assets/headphones_b_2.webp'
 import Product from '../Product/Product';
-
-
+//fake data for products
 const products = [
     {
         id:1,
@@ -42,11 +41,11 @@ const products = [
 const Products = () => {
     return (
         <div className='container text-center mx-auto'>
-            <div className='mt-20 mb-10 text-[#324d67]'>
-                <h1 className='text-4xl font-bold mb-2 '>Best Seller Products</h1>
-                <p>speaker There are many variations passages</p>
+            <div className='mt-16 mb-10 text-[#324d67]'>
+                <h1 className='text-5xl font-bold mb-2 '>Best Seller Products</h1>
+                <p className='text-xl'>speaker There are many variations passages</p>
             </div>
-            <div className='grid grid-cols-4 gap-4 justify-items-center'>
+            <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-items-center'>
                {
                 products.map(pd=><Product  pd={pd} key={pd.id} />)
                }
