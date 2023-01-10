@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa'
 import { BsCart } from 'react-icons/bs'
 import { Link } from 'react-router-dom';
+import './Navbar.css'
+import { Badge } from '@mui/material';
 
 const Navbar = () => {
     const [navMobile, setNavMobile] = useState(false)
@@ -23,7 +25,11 @@ const Navbar = () => {
                                 </button>
 
                             </div>
-                            <p className='mr-10 text-2xl'><BsCart /></p>
+                            <p className='mr-10 text-2xl'>
+                                <Badge badgeContent={0} color="secondary" showZero>
+                                    <BsCart />
+                                </Badge>
+                            </p>
                         </div>
                         {/* mobile responsive item */}
                         <div className={`${navMobile ? 'max-h-96' : 'max-h-0'} lg:hidden bg-gray-400 absolute top-16 w-full left-0 right-0  rounded transition-all overflow-hidden`}>
