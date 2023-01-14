@@ -1,43 +1,7 @@
-import Logo from '../../assets/headphones_b_2.webp'
 import Product from '../Product/Product';
+import  { products } from '../../fakeData/data'
 //fake data for products
-const products = [
-    {
-        id:1,
-        img:Logo,
-        title:'boAt Party Pal 50',
-        price: 56
-    },
-    {
-        id:2,
-        img:Logo,
-        title:'boAt Party Pal 50',
-        price: 56
-    },
-    {
-        id:3,
-        img:Logo,
-        title:'boAt Party Pal 50',
-        price: 56
-    },
-    {
-        id:4,
-        img:Logo,
-        title:'boAt Party Pal 50',
-        price: 56
-    },
-    {
-        id:5,
-        img:Logo,
-        title:'boAt Party Pal 50',
-        price: 56
-    }, {
-        id:6,
-        img:Logo,
-        title:'boAt Party Pal 50',
-        price: 56
-    }
-]
+
 const Products = () => {
     return (
         <div className='container text-center mx-auto'>
