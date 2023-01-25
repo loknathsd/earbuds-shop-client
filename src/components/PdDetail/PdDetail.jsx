@@ -2,7 +2,6 @@ import React from 'react';
 import Rating from '@mui/material/Rating'
 import Logo from '../../assets/headphones_a_1.webp'
 
-
 //fake data for frontend. it will be changed when data will have come from database
 const pd = {
     name: 'boAt Rockerz 451',
@@ -11,11 +10,11 @@ const pd = {
 }
 const PdDetail = () => {
     return (
-        <div className='container mx-auto flex gap-10 mt-8'>
-            <div className='img-area w-[400px] h-[400px] bg-[#ebebeb] rounded-lg hover:bg-[#f02d34] p-5 cursor-pointer'>
+        <div className='container mx-auto lg:flex gap-10  mt-8'>
+            <div className='img-area lg:w-[400px] lg:h-[400px] lg:m-0 md:m-5 max-sm:h-[350px] max-sm:w-[350px] max-sm:mx-auto bg-[#ebebeb] rounded-lg hover:bg-[#f02d34] p-5 cursor-pointer'>
                 <img src={Logo} alt="" />
             </div>
-            <div id='info-area' className='w-[60%] text-[#324d67]'>
+            <div id='info-area' className='lg:w-[60%] text-[#324d67] lg:m-0 md:m-5 max-sm:m-5'>
                 <h1 className=' text-4xl font-bold'>{pd.name}</h1>
                 <p className='my-3'> <Rating defaultValue={3} readOnly /> </p>
                 <div>
@@ -35,7 +34,6 @@ const PdDetail = () => {
                     <button className='bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-5 border border-red-500 hover:border-transparent rounded'>Add to cart</button>
                     <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-5 border border-blue-500 hover:border-transparent rounded'>Buy now</button>
                 </div>
-
             </div>
         </div>
     );

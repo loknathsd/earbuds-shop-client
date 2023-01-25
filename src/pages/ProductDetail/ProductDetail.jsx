@@ -19,7 +19,6 @@ const ProductDetail = () => {
                             products.map(pd => <Product key={pd.id} pd={pd} />)
                         }
                        </div>
-              
                     </Marquee> 
             </div>
             <Footer />
