@@ -8,6 +8,7 @@ const pd = {
     name: 'boAt Rockerz 451',
     description: 'Set your mind ablaze with boAt Rockerz 450 — our slick headphones that offer immersive sound quality and add luxury to your sound. Propelled by crystal clear 40mm dynamic drivers, slip into an alternate HD immersive audio reality. The soft cornered matte black finish allows for a comfortable fit, propagated by plush foam in adaptive and adjustable design. Choose your mode, go wireless with Bluetooth V4.2 or connect an aux wire that doesn’t cause any drain on the 300mAh rechargeable lithium battery.',
     price: 45 ,
+    img:Logo
 }
 const PdDetail = () => {
 
@@ -15,7 +16,7 @@ const PdDetail = () => {
     return (
         <div className='container mx-auto lg:flex gap-10  mt-8'>
             <div className='img-area lg:w-[400px] lg:h-[420px] lg:m-0 md:m-5 max-sm:h-[350px] max-sm:w-[350px] max-sm:mx-auto bg-[#ebebeb] rounded-lg hover:bg-[#f02d34] p-5 cursor-pointer'>
-                <img src={Logo} alt="" />
+                <img src={pd.img} alt="" />
             </div>
             <div id='info-area' className='lg:w-[60%] text-[#324d67] lg:m-0 md:m-5 max-sm:m-5'>
                 <h1 className=' text-4xl font-bold'>{pd.name}</h1>
