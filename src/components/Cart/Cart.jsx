@@ -7,8 +7,7 @@ import EmptyCart from './EmptyCart';
 
 const Cart = () => {
     const cartRef = useRef();
-    const { totalPrice, setShowCart, totalQuantities, cartItems } = useStateContext();
-    console.log(cartItems, 'items')
+    const { totalPrice, setShowCart, totalQuantities, cartItems,removeProduct,toggleCartItemQuantity } = useStateContext();
     return (
         <div className='cart-wrapper' >
             <div className='cart-container '>
@@ -30,11 +29,11 @@ const Cart = () => {
                             </div>
                             <div className='flex gap-12'>
                                 <div className='inline-flex rounded-md shadow-sm mt-10 mx-5 mb-10'>
-                                    <button onClick={''} className='px-5 py-2 text-xl font-medium text-gray-900 bg-gray-200 border border-gray-200 rounded-l-lg '>-</button>
+                                    <button onClick={()=>toggleCartItemQuantity(item.id,'dec')} className='px-5 py-2 text-xl font-medium text-gray-900 bg-gray-200 border border-gray-200 rounded-l-lg '>-</button>
                                     <button className='px-5 py-2 text-xl font-medium text-gray-900 bg-white border-t border-b border-gray-200'>{item.quantity}</button>
-                                    <button onClick={''} className="px-5 py-2 text-xl font-medium text-gray-900 bg-gray-200 border border-gray-200 rounded-r-md">+</button>
+                                    <button onClick={()=>toggleCartItemQuantity(item.id,'inc')} className="px-5 py-2 text-xl font-medium text-gray-900 bg-gray-200 border border-gray-200 rounded-r-md">+</button>
                                 </div>
-                                <button className='text-3xl text-red-600  '> <TiDeleteOutline /> </button>
+                                <button  onClick={()=>removeProduct(item)}  className='text-3xl text-red-600  '> <TiDeleteOutline /> </button>
                             </div>
                         </div>
                     </div>
@@ -43,9 +42,9 @@ const Cart = () => {
                 <div className='mt-48 mx-5 text-center' >
                     <div className='flex gap-72 text-3xl '>
                         <p className=''> Subtotal :</p>
-                        <p>$ 500</p>
+                        <p>$ {totalPrice}</p>
                     </div>
-                    <button className='bg-red-600 px-32 py-3 mt-12 rounded-lg'>Pay with Stripe</button>
+                    <button className='bg-red-600 px-32 py-3 mt-12 rounded-lg text-white font-semibold'>Pay with Stripe</button>
                 </div>
             </div>
         </div>

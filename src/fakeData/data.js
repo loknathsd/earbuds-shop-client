@@ -10,19 +10,19 @@ export const products = [
     {
         id:2,
         img:Logo,
-        title:'boAt Party Pal 50',
+        title:'Title',
         price: 56
     },
     {
         id:3,
         img:Logo,
-        title:'boAt Party Pal 50',
+        title:'test',
         price: 56
     },
     {
         id:4,
         img:Logo,
-        title:'boAt Party Pal 50',
+        title:'test two',
         price: 56
     },
     {
