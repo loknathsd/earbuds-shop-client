@@ -11,7 +11,7 @@ const EmptyCart = () => {
        navigate("/");
     }
     return (
-        <div className='text-center '>
+        <div className='text-center mt-10 '>
             <img className='mx-auto' src={Bag} alt="" />
             <p className='text-2xl'>Your Shopping Bag Is Empty.</p>
             <button onClick={handleButton} className='px-16 py-2 bg-red-600 text-white font-semibold rounded mt-10' > Shop Items</button>  
