@@ -22,7 +22,7 @@ const PdDetail = () => {
                     <p>{pd.description}</p>
                 </div>
                 <h1 className='text-3xl text-[#f02d34] font-[700] my-5'>${pd.price}</h1>
-                <div id='quantity' className='flex gap-6 '>
+                <div id='quantity' className='flex gap-6 '>   
                     <h2 className='text-2xl font-bold'>Quantity :</h2>
                     <div className='inline-flex rounded-md shadow-sm'>
                         <button className='px-5 py-2 text-xl font-medium text-gray-900 bg-gray-200 border border-gray-200 rounded-l-lg '>-</button>
@@ -30,7 +30,8 @@ const PdDetail = () => {
                         <button className="px-5 py-2 text-xl font-medium text-gray-900 bg-gray-200 border border-gray-200 rounded-r-md">+</button>
                     </div>
                 </div>
-                <div id="addBuy" className='mt-6 flex gap-6 text-lg'>
+                
+                <div id="addBuy" className='mt-6 flex gap-6 text-lg'> 
                     <button className='bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-5 border border-red-500 hover:border-transparent rounded'>Add to cart</button>
                     <button className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-5 border border-blue-500 hover:border-transparent rounded'>Buy now</button>
                 </div>
