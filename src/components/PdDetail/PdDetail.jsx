@@ -11,8 +11,11 @@ const pd = {
     img:Logo
 }
 const PdDetail = () => {
-
-    const {qty,incQty,decQty,addCart } = useStateContext();
+    const {qty,incQty,decQty,addCart,setShowCart } = useStateContext();
+    const handleBuy=()=>{
+        addCart(pd,qty);
+        setShowCart(true)
+    }
     return (
         <div className='container mx-auto lg:flex gap-10  mt-8'>
             <div className='img-area lg:w-[400px] lg:h-[420px] lg:m-0 md:m-5 max-sm:h-[350px] max-sm:w-[350px] max-sm:mx-auto bg-[#ebebeb] rounded-lg hover:bg-[#f02d34] p-5 cursor-pointer'>
@@ -36,7 +39,7 @@ const PdDetail = () => {
                 </div>
                 <div id="addBuy" className='mt-6 flex gap-6 text-lg'> 
                     <button onClick={()=>addCart(pd,qty)} className='bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-5 border border-red-500 hover:border-transparent rounded'>Add to cart</button>
-                    <button  className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-5 border border-blue-500 hover:border-transparent rounded'>Buy now</button>
+                    <button onClick={handleBuy}  className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-5 border border-blue-500 hover:border-transparent rounded'>Buy now</button>
                 </div>
             </div>
         </div>
