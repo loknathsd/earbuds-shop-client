@@ -7,6 +7,7 @@ import { Badge } from '@mui/material';
 import { useStateContext } from '../../../context/StateContext';
 import Cart from '../../Cart/Cart';
 
+
 const Navbar = () => {
     const [navMobile, setNavMobile] = useState(false);
     const { showCart, setShowCart, totalQuantities } = useStateContext();
