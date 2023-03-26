@@ -1,6 +1,11 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import AddProduct from '../../components/AddProduct/AddProduct';
+import Footer from '../../components/Shared/Footer/Footer';
+import Navbar from '../../components/Shared/Navbar/Navbar';
 import Checkout from '../../pages/Checkout/Checkout';
+import Dashboard from '../../pages/Dashboard/Dashboard';
+import Profile from '../../pages/Dashboard/Profile';
 import Home from '../../pages/Home/Home';
 import Login from '../../pages/Login/Login';
 import ProductDetail from '../../pages/ProductDetail/ProductDetail';
@@ -10,16 +15,26 @@ import Success from '../../pages/Success/Success';
 
 const Routing = () => {
     return (
-        <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path="products" element={<Products />} />
-            <Route path="/product-detail/:id" element={<ProductDetail />} />
-            <Route path='/checkout' element={<Checkout />} />
-            <Route path='/success' element={<Success />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register/>} />
-            <Route path='dashboard' element={''} />
-        </Routes>
+        <div>
+        <Navbar />
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path="products" element={<Products />} />
+                <Route path="/product-detail/:id" element={<ProductDetail />} />
+                <Route path='/checkout' element={<Checkout />} />
+                <Route path='/success' element={<Success />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />}/>
+                <Route path='/dashboard' element={<Dashboard />} >
+                  <Route path="/dashboard" element={ <Navigate replace to="profile" ></Navigate>} />
+                  <Route path="profile" element={<Profile />} />
+                  <Route path="add" element={<AddProduct />} />
+                  
+
+                </Route>
+            </Routes>
+            <Footer />
+        </div>
     );
 };
 

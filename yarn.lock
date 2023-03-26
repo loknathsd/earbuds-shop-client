@@ -2877,13 +2877,13 @@
   "resolved" "https://registry.npmjs.org/at-least-node/-/at-least-node-1.0.0.tgz"
   "version" "1.0.0"
 
-"autoprefixer@^10.4.13":
-  "integrity" "sha512-49vKpMqcZYsJjwotvt4+h/BCjJVnhGwcLpDt5xkcaOG3eLrG/HUYLagrihYsQ+qrIBgIzX1Rw7a6L8I/ZA1Atg=="
-  "resolved" "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.13.tgz"
-  "version" "10.4.13"
+"autoprefixer@^10.4.13", "autoprefixer@^10.4.14":
+  "integrity" "sha512-FQzyfOsTlwVzjHxKEqRIAdJx9niO6VCBCoEwax/VLSoQF29ggECcPuBqUMZ+u8jCZOPSy8b8/8KnuFbp0SaFZQ=="
+  "resolved" "https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.14.tgz"
+  "version" "10.4.14"
   dependencies:
-    "browserslist" "^4.21.4"
-    "caniuse-lite" "^1.0.30001426"
+    "browserslist" "^4.21.5"
+    "caniuse-lite" "^1.0.30001464"
     "fraction.js" "^4.2.0"
     "normalize-range" "^0.1.2"
     "picocolors" "^1.0.0"
@@ -3135,15 +3135,15 @@
   "resolved" "https://registry.npmjs.org/browser-process-hrtime/-/browser-process-hrtime-1.0.0.tgz"
   "version" "1.0.0"
 
-"browserslist@^4.0.0", "browserslist@^4.14.5", "browserslist@^4.16.6", "browserslist@^4.18.1", "browserslist@^4.21.3", "browserslist@^4.21.4", "browserslist@>= 4", "browserslist@>= 4.21.0", "browserslist@>=4":
-  "integrity" "sha512-CBHJJdDmgjl3daYjN5Cp5kbTf1mUhZoS+beLklHIvkOWscs83YAhLlF3Wsh/lciQYAcbBJgTOD44VtG31ZM4Hw=="
-  "resolved" "https://registry.npmjs.org/browserslist/-/browserslist-4.21.4.tgz"
-  "version" "4.21.4"
+"browserslist@^4.0.0", "browserslist@^4.14.5", "browserslist@^4.16.6", "browserslist@^4.18.1", "browserslist@^4.21.3", "browserslist@^4.21.4", "browserslist@^4.21.5", "browserslist@>= 4", "browserslist@>= 4.21.0", "browserslist@>=4":
+  "integrity" "sha512-tUkiguQGW7S3IhB7N+c2MV/HZPSCPAAiYBZXLsBhFB/PCy6ZKKsZrmBayHV9fdGV/ARIfJ14NkxKzRDjvp7L6w=="
+  "resolved" "https://registry.npmjs.org/browserslist/-/browserslist-4.21.5.tgz"
+  "version" "4.21.5"
   dependencies:
-    "caniuse-lite" "^1.0.30001400"
-    "electron-to-chromium" "^1.4.251"
-    "node-releases" "^2.0.6"
-    "update-browserslist-db" "^1.0.9"
+    "caniuse-lite" "^1.0.30001449"
+    "electron-to-chromium" "^1.4.284"
+    "node-releases" "^2.0.8"
+    "update-browserslist-db" "^1.0.10"
 
 "bser@2.1.1":
   "integrity" "sha512-gQxTNE/GAfIIrmHLUE3oJyp5FO6HRBfhjnw4/wMmA63ZGDJnWBmgY/lyQBpnDUkGmAhbSe39tx2d/iTOAfglwQ=="
@@ -3218,10 +3218,10 @@
     "lodash.memoize" "^4.1.2"
     "lodash.uniq" "^4.5.0"
 
-"caniuse-lite@^1.0.0", "caniuse-lite@^1.0.30001400", "caniuse-lite@^1.0.30001426":
-  "integrity" "sha512-OyxRR4Vof59I3yGWXws6i908EtGbMzVUi3ganaZQHmydk1iwDhRnvaPG2WaR0KcqrDFKrxVZHULT396LEPhXfg=="
-  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001441.tgz"
-  "version" "1.0.30001441"
+"caniuse-lite@^1.0.0", "caniuse-lite@^1.0.30001449", "caniuse-lite@^1.0.30001464":
+  "integrity" "sha512-065uNwY6QtHCBOExzbV6m236DDhYCCtPmQUCoQtwkVqzud8v5QPidoMr6CoMkC2nfp6nksjttqWQRRh75LqUmA=="
+  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001470.tgz"
+  "version" "1.0.30001470"
 
 "canvas-confetti@^1.6.0":
   "integrity" "sha512-ej+w/m8Jzpv9Z7W7uJZer14Ke8P2ogsjg4ZMGIuq4iqUOqY2Jq8BNW42iGmNfRwREaaEfFIczLuZZiEVSYNHAA=="
@@ -4071,7 +4071,7 @@
   dependencies:
     "jake" "^10.8.5"
 
-"electron-to-chromium@^1.4.251":
+"electron-to-chromium@^1.4.284":
   "integrity" "sha512-M8WEXFuKXMYMVr45fo8mq0wUrrJHheiKZf6BArTKk9ZBYCKJEOU5H8cdWgDT+qCVZf7Na4lVUaZsA+h6uA9+PA=="
   "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.284.tgz"
   "version" "1.4.284"
@@ -6623,7 +6623,7 @@
   "resolved" "https://registry.npmjs.org/node-int64/-/node-int64-0.4.0.tgz"
   "version" "0.4.0"
 
-"node-releases@^2.0.6":
+"node-releases@^2.0.8":
   "integrity" "sha512-dFSmB8fFHEH/s81Xi+Y/15DQY6VHW81nXRj86EMSL3lmuTmK1e+aT4wrFCkTbm+gSwkw4KpX+rT/pMM2c1mF+A=="
   "resolved" "https://registry.npmjs.org/node-releases/-/node-releases-2.0.8.tgz"
   "version" "2.0.8"
@@ -7493,7 +7493,7 @@
   dependencies:
     "postcss-selector-parser" "^6.0.10"
 
-"postcss-selector-parser@^6.0.10", "postcss-selector-parser@^6.0.2", "postcss-selector-parser@^6.0.4", "postcss-selector-parser@^6.0.5", "postcss-selector-parser@^6.0.9":
+"postcss-selector-parser@^6.0.10", "postcss-selector-parser@^6.0.11", "postcss-selector-parser@^6.0.2", "postcss-selector-parser@^6.0.4", "postcss-selector-parser@^6.0.5", "postcss-selector-parser@^6.0.9":
   "integrity" "sha512-zbARubNdogI9j7WY4nQJBiNqQf3sLS3wCP4WfOidu+p28LofJqDH1tcXypGrcmMHhDk2t9wGhCsYe/+szLTy1g=="
   "resolved" "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.0.11.tgz"
   "version" "6.0.11"
@@ -7521,10 +7521,10 @@
   "resolved" "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz"
   "version" "4.2.0"
 
-"postcss@^7.0.0 || ^8.0.1", "postcss@^8", "postcss@^8.0.0", "postcss@^8.0.3", "postcss@^8.0.9", "postcss@^8.1.0", "postcss@^8.1.4", "postcss@^8.2", "postcss@^8.2.14", "postcss@^8.2.15", "postcss@^8.2.2", "postcss@^8.3", "postcss@^8.3.3", "postcss@^8.3.5", "postcss@^8.4", "postcss@^8.4.18", "postcss@^8.4.19", "postcss@^8.4.4", "postcss@^8.4.6", "postcss@>= 8", "postcss@>=8", "postcss@>=8.0.9":
-  "integrity" "sha512-6Q04AXR1212bXr5fh03u8aAwbLxAQNGQ/Q1LNa0VfOI06ZAlhPHtQvE4OIdpj4kLThXilalPnmDSOD65DcHt+g=="
-  "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.20.tgz"
-  "version" "8.4.20"
+"postcss@^7.0.0 || ^8.0.1", "postcss@^8", "postcss@^8.0.0", "postcss@^8.0.3", "postcss@^8.0.9", "postcss@^8.1.0", "postcss@^8.1.4", "postcss@^8.2", "postcss@^8.2.14", "postcss@^8.2.15", "postcss@^8.2.2", "postcss@^8.3", "postcss@^8.3.3", "postcss@^8.3.5", "postcss@^8.4", "postcss@^8.4.19", "postcss@^8.4.21", "postcss@^8.4.4", "postcss@^8.4.6", "postcss@>= 8", "postcss@>=8", "postcss@>=8.0.9":
+  "integrity" "sha512-tP7u/Sn/dVxK2NnruI4H9BG+x+Wxz6oeZ1cJ8P6G/PZY0IKk4k/63TDsQf2kQq3+qoJeLm2kIBUNlZe3zgb4Zg=="
+  "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.21.tgz"
+  "version" "8.4.21"
   dependencies:
     "nanoid" "^3.3.4"
     "picocolors" "^1.0.0"
@@ -8733,10 +8733,10 @@
   "resolved" "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.4.tgz"
   "version" "3.2.4"
 
-"tailwindcss@^3.0.2", "tailwindcss@^3.2.4", "tailwindcss@>=3.0.0 || >= 3.0.0-alpha.1":
-  "integrity" "sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ=="
-  "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.2.4.tgz"
-  "version" "3.2.4"
+"tailwindcss@^3.0.2", "tailwindcss@^3.2.7", "tailwindcss@>=3.0.0 || >= 3.0.0-alpha.1":
+  "integrity" "sha512-B6DLqJzc21x7wntlH/GsZwEXTBttVSl1FtCzC8WP4oBc/NKef7kaax5jeihkkCEWc831/5NDJ9gRNDK6NEioQQ=="
+  "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.2.7.tgz"
+  "version" "3.2.7"
   dependencies:
     "arg" "^5.0.2"
     "chokidar" "^3.5.3"
@@ -8752,12 +8752,12 @@
     "normalize-path" "^3.0.0"
     "object-hash" "^3.0.0"
     "picocolors" "^1.0.0"
-    "postcss" "^8.4.18"
+    "postcss" "^8.0.9"
     "postcss-import" "^14.1.0"
     "postcss-js" "^4.0.0"
     "postcss-load-config" "^3.1.4"
     "postcss-nested" "6.0.0"
-    "postcss-selector-parser" "^6.0.10"
+    "postcss-selector-parser" "^6.0.11"
     "postcss-value-parser" "^4.2.0"
     "quick-lru" "^5.1.1"
     "resolve" "^1.22.1"
@@ -9044,7 +9044,7 @@
   "resolved" "https://registry.npmjs.org/upath/-/upath-1.2.0.tgz"
   "version" "1.2.0"
 
-"update-browserslist-db@^1.0.9":
+"update-browserslist-db@^1.0.10":
   "integrity" "sha512-OztqDenkfFkbSG+tRxBeAnCVPckDBcvibKd35yDONx6OU8N7sqgwc7rCbkJ/WcYtVRZ4ba68d6byhC21GFh7sQ=="
   "resolved" "https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.0.10.tgz"
   "version" "1.0.10"
