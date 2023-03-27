@@ -1,8 +1,11 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import AddProduct from '../../components/AddProduct/AddProduct';
+import Orders from '../../components/Orders/Orders';
+import ProductsAll from '../../components/ProductsAll/ProductsAll';
 import Footer from '../../components/Shared/Footer/Footer';
 import Navbar from '../../components/Shared/Navbar/Navbar';
+import Users from '../../components/Users/Users';
 import Checkout from '../../pages/Checkout/Checkout';
 import Dashboard from '../../pages/Dashboard/Dashboard';
 import Profile from '../../pages/Dashboard/Profile';
@@ -29,8 +32,10 @@ const Routing = () => {
                   <Route path="/dashboard" element={ <Navigate replace to="profile" ></Navigate>} />
                   <Route path="profile" element={<Profile />} />
                   <Route path="add" element={<AddProduct />} />
-                  
-
+                  <Route path="products" element={<ProductsAll />} />
+                  <Route path="orders" element={<Orders />} />
+                  <Route path="users" element={<Users />} />
+                  <Route path="" element={<Home />} />
                 </Route>
             </Routes>
             <Footer />

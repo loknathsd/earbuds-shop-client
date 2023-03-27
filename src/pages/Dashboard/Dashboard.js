@@ -4,9 +4,9 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 
 const Dashboard = () => {
     return (
-        <div>
+        <div className='flex'>
             <Sidebar />
-            <div className="p-4 sm:ml-64">
+            <div className="">
                 <Outlet />
             </div>
         </div>
