@@ -6,9 +6,7 @@ import EmptyCart from './EmptyCart';
 
 
 export default function Cart() {
-    //   const [open, setOpen] = useState(true)
     const { totalPrice, showCart, setShowCart, totalQuantities, cartItems, removeProduct, toggleCartItemQuantity } = useStateContext();
-
     return (
         <Transition.Root show={showCart} as={Fragment}>
             <Dialog as="div" className="relative z-20" onClose={setShowCart}>
@@ -23,7 +21,6 @@ export default function Cart() {
                 >
                     <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
                 </Transition.Child>
-
                 <div className="fixed inset-0 overflow-hidden">
                     <div className="absolute inset-0 overflow-hidden">
                         <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
@@ -53,7 +50,6 @@ export default function Cart() {
                                                 </div>
                                             </div>
                                             {cartItems.length < 1 && <EmptyCart />}
-
                                             <div className="mt-8">
                                                 <div className="flow-root">
                                                     <ul role="list" className="-my-6 divide-y divide-gray-200">
@@ -61,12 +57,11 @@ export default function Cart() {
                                                             <li key={product.id} className="flex py-6">
                                                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                                     <img
-                                                                        src={product.img}
+                                                                        src={product.imgUrl}
                                                                         alt={product.imageAlt}
                                                                         className="h-full w-full object-cover object-center"
                                                                     />
                                                                 </div>
-
                                                                 <div className="ml-4 flex flex-1 flex-col">
                                                                     <div>
                                                                         <div className="flex justify-between text-base font-medium text-gray-900">
@@ -78,9 +73,9 @@ export default function Cart() {
                                                                     </div>
                                                                     <div className="flex flex-1 items-end justify-between text-sm ">
                                                                         <div className='flex'>
-                                                                            <button onClick={() => toggleCartItemQuantity(product.id, 'dec')} className="px-3  bg-gray-400 rounded text-red-600">-</button>
+                                                                            <button onClick={() => toggleCartItemQuantity(product._id, 'dec')} className="px-3  bg-gray-400 rounded text-red-600">-</button>
                                                                             <p className="text-gray-500 px-2"> {product.quantity}</p>
-                                                                            <button onClick={() => toggleCartItemQuantity(product.id, 'inc')} className="px-2 bg-gray-400 rounded text-red-600">+</button>
+                                                                            <button onClick={() => toggleCartItemQuantity(product._id, 'inc')} className="px-2 bg-gray-400 rounded text-red-600">+</button>
                                                                         </div>
 
                                                                         <div className="flex">
@@ -100,7 +95,6 @@ export default function Cart() {
                                                 </div>
                                             </div>
                                         </div>
-
                                         {cartItems.length >= 1 && <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                                             <div className="flex justify-between text-base font-medium text-gray-900">
                                                 <p>Subtotal</p>

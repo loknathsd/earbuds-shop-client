@@ -1,8 +1,14 @@
 import Product from '../Product/Product';
-import  { products } from '../../fakeData/data'
-//fake data for products
+import { useEffect, useState } from 'react';
 
 const Products = () => {
+    const [products,setProducts] = useState([]);
+
+    useEffect(()=>{
+         fetch("http://localhost:5000/product")
+         .then(res=>res.json())
+         .then(data=>setProducts(data.slice(0,8)))   
+    },[])
     return (
         <div className='container text-center mx-auto'>
             <div className='mt-16 mb-10 text-[#324d67]'>
