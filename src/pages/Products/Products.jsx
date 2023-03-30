@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Product from '../../components/Product/Product';
+import Loader from '../../components/Shared/Loader/Loader';
 
 const Products = () => {
     const [products,setProducts] = useState([]);
@@ -14,11 +15,11 @@ const Products = () => {
     return (
         <div className='container text-center mx-auto'>
             <h1 className='text-3xl font-bold mt-5 mb-12'>All Products</h1>
-            <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-items-center'>
+          {products.length===0 ? <Loader /> :  <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-items-center'>
                {
                 products.map(pd=><Product  pd={pd} key={pd.id} />)
                }
-            </div>
+            </div>}
         </div>
     );
 };
