@@ -6,8 +6,8 @@ const Checkout = () => {
     const {cartItems,totalPrice} = useStateContext();
     return (
       <section>
-        <div className="mx-auto grid max-w-screen-2xl grid-cols-1 md:grid-cols-2">
-          <div className="bg-gray-50 py-12 md:py-24">
+        <div className="mx-auto grid max-w-screen-lg px-16 grid-cols-1 md:grid-cols-2 bg-gray-50">
+          <div className=" py-12 md:py-24">
             <div className="mx-auto max-w-lg space-y-8 px-4 lg:px-8">
               <div className="flex items-center gap-4">
                 <span className="h-10 w-10 rounded-full bg-blue-700"></span>
@@ -25,7 +25,7 @@ const Checkout = () => {
                   <ul className="-my-4 divide-y divide-gray-100">
                     {cartItems.length >=1 && cartItems.map(item=><li className="flex items-center gap-4 py-4">
                       <img
-                        src={item.img}
+                        src={item.imgUrl}
                         alt=""
                         className="h-16 w-16 rounded object-cover"
                       />
@@ -43,9 +43,9 @@ const Checkout = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white py-12 md:py-24">
+          <div className=" py-12 md:py-24">
             <div className="mx-auto max-w-lg px-4 lg:px-8">
-            <Form />
+            <Form cartItems={cartItems} />
             </div>
           </div>
         </div>
