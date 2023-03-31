@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import AddProduct from '../../components/AddProduct/AddProduct';
-import Orders from '../../components/Orders/Orders';
-import ProductsAll from '../../components/ProductsAll/ProductsAll';
+import AddProduct from '../../components/Dashboard/AddProduct/AddProduct';
+import Orders from '../../components/Dashboard/Orders/Orders';
+import ProductsAll from '../../components/Dashboard/ProductsAll/ProductsAll';
 import Footer from '../../components/Shared/Footer/Footer';
 import Navbar from '../../components/Shared/Navbar/Navbar';
 import Users from '../../components/Users/Users';
