@@ -32,6 +32,7 @@ const Routing = () => {
                   <Route path="/dashboard" element={ <Navigate replace to="profile" ></Navigate>} />
                   <Route path="profile" element={<Profile />} />
                   <Route path="add" element={<AddProduct />} />
+                  <Route path="edit/:id" element={<AddProduct />} />
                   <Route path="products" element={<ProductsAll />} />
                   <Route path="orders" element={<Orders />} />
                   <Route path="users" element={<Users />} />

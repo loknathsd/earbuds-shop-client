@@ -13,7 +13,6 @@ const ProductsAll = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
-
     const handleDelete =  (id) => {
         fetch(`http://localhost:5000/product/${id}`, {
             method: "DELETE"
@@ -26,7 +25,6 @@ const ProductsAll = () => {
             toast.error("Something went wrong");
         })
     }
-
     return (
         <div class="relative overflow-auto shadow-md sm:rounded-lg mx-16 mt-5 w-[100%]">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
@@ -61,7 +59,7 @@ const ProductsAll = () => {
                             {pd?.description?.slice(0, 15)}...
                         </td>
                         <td class="px-6 py-4">
-                            <Link to="/dashboard/add" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
+                            <Link to={`/dashboard/edit/${pd._id}`} class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
                         </td>
                         <td class="px-12 text-lg text-red-500 py-4">
                             <button onClick={() => handleDelete(pd._id)} ><AiFillDelete /></button>
@@ -71,8 +69,6 @@ const ProductsAll = () => {
             </table>
             {products.length === 0 && <Loader />}
         </div>
-
-
     );
 };
 
