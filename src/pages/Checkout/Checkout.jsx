@@ -23,7 +23,7 @@ const Checkout = () => {
               <div>
                 <div className="flow-root">
                   <ul className="-my-4 divide-y divide-gray-100">
-                    {cartItems.length >=1 && cartItems.map(item=><li className="flex items-center gap-4 py-4">
+                    {cartItems.length >=1 && cartItems.map(item=><li key={item._id} className="flex items-center gap-4 py-4">
                       <img
                         src={item.imgUrl}
                         alt=""
@@ -43,8 +43,8 @@ const Checkout = () => {
               </div>
             </div>
           </div>
-          <div className=" py-12 md:py-24">
-            <div className="mx-auto max-w-lg px-4 lg:px-8">
+          <div className=" py-5 md:py-24 border border-gray-200">
+            <div className="mx-auto max-w-lg px-4 lg:px-8 ">
             <Form cartItems={cartItems} />
             </div>
           </div>
