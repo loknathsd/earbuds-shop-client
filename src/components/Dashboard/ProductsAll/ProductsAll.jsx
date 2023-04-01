@@ -27,22 +27,22 @@ const ProductsAll = () => {
     }
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg mx-16 mt-5 w-[100%]">
-            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
-                <thead className="text-xs text-gray-700  uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <table className="w-full text-sm text-left text-gray-600 dark:text-gray-400 ">
+                <thead className="text-xs text-gray-700  uppercase bg-gray-300  dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" className="px-6 py-3 ">
+                        <th scope="col" className="px-6 py-5 ">
                             Product name
                         </th>
-                        <th scope="col" className="px-6 py-3">
+                        <th scope="col" className="px-6 py-5">
                             Price
                         </th>
-                        <th scope="col" className="px-6 py-3">
+                        <th scope="col" className="px-6 py-5">
                             Description
                         </th>
-                        <th scope="col" className="px-6 py-3">
+                        <th scope="col" className="px-6 py-5">
                             Action
                         </th>
-                        <th scope="col" className="px-10 py-3">
+                        <th scope="col" className="px-10 py-5">
                             Action
                         </th>
                     </tr>

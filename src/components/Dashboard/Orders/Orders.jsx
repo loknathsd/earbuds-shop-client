@@ -23,21 +23,21 @@ const Orders = () => {
     return (
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg lg:mx-16 mt-5 w-full max-w-full">
             <table className=" w-full min-w-0 text-sm text-center text-gray-500 dark:text-gray-400 ">
-                <thead className="text-xs text-gray-700  uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <thead className="text-xs text-gray-700  uppercase bg-gray-300 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" className="px-6 py-3 ">
+                        <th scope="col" className="px-6 py-5 ">
                            name
                         </th>
-                        <th scope="col" className="px-6 py-3">
+                        <th scope="col" className="px-6 py-5">
                             email
                         </th>
-                        <th scope="col" className="px-6 py-3">
+                        <th scope="col" className="px-6 py-5">
                             items
                         </th>
-                        <th scope="col" className="px-10 py-3">
+                        <th scope="col" className="px-10 py-5">
                             total Price
                         </th>
-                        <th scope="col" className="px-10 py-3">
+                        <th scope="col" className="px-10 py-5">
                             action
                         </th>
                     </tr>

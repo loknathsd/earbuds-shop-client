@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   MdOutlineDashboard,
   MdAccountCircle,
@@ -6,9 +7,7 @@ import {
   MdLibraryAdd,
   MdOutlineProductionQuantityLimits,
 } from 'react-icons/md';
-import {
-  BsFillCartCheckFill,
-} from 'react-icons/bs';
+import { BsFillCartCheckFill } from 'react-icons/bs';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 import { FiUsers } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
@@ -25,10 +24,12 @@ const Menus = [
 
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
+  const location = useLocation();
 
   const toggleSidebar = () => {
     setOpen(!open);
   };
+
   return (
     <div className="flex items-end justify-start ">
       <div
@@ -43,8 +44,9 @@ const Sidebar = () => {
           {Menus.map((Menu, index) => (
             <div key={index}>
               <Link to={Menu.path}
-                className={`flex  rounded-md p-2 cursor-pointer hover:bg-teal-400 text-white text-sm items-center gap-x-4 
-               `}
+                className={`flex rounded-md p-2 cursor-pointer text-white text-sm items-center gap-x-4 ${
+                  location.pathname === `/dashboard/${Menu.path}` ? 'bg-teal-400' : ''
+                }`}
               >
                 <span>{Menu.icon}</span>
                 <span className="flex-1">{Menu.title}</span>
@@ -57,4 +59,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar; 
+export default Sidebar;
