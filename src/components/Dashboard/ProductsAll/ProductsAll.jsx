@@ -26,42 +26,42 @@ const ProductsAll = () => {
         })
     }
     return (
-        <div class="relative overflow-auto shadow-md sm:rounded-lg mx-16 mt-5 w-[100%]">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
-                <thead class="text-xs text-gray-700  uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg mx-16 mt-5 w-[100%]">
+            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 ">
+                <thead className="text-xs text-gray-700  uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-3 ">
+                        <th scope="col" className="px-6 py-3 ">
                             Product name
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" className="px-6 py-3">
                             Price
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" className="px-6 py-3">
                             Description
                         </th>
-                        <th scope="col" class="px-6 py-3">
+                        <th scope="col" className="px-6 py-3">
                             Action
                         </th>
-                        <th scope="col" class="px-10 py-3">
+                        <th scope="col" className="px-10 py-3">
                             Action
                         </th>
                     </tr>
                 </thead>
-                {products.map(pd => <tbody>
-                    <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {products.map(pd => <tbody key={pd._id}>
+                    <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                        <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {pd.name}
                         </th>
-                        <td class="px-6 py-4">
+                        <td className="px-6 py-4">
                             ${pd.price}
                         </td>
-                        <td class="px-6 py-4">
+                        <td className="px-6 py-4">
                             {pd?.description?.slice(0, 15)}...
                         </td>
-                        <td class="px-6 py-4">
-                            <Link to={`/dashboard/edit/${pd._id}`} class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
+                        <td className="px-6 py-4">
+                            <Link to={`/dashboard/edit/${pd._id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
                         </td>
-                        <td class="px-12 text-lg text-red-500 py-4">
+                        <td className="px-12 text-lg text-red-500 py-4">
                             <button onClick={() => handleDelete(pd._id)} ><AiFillDelete /></button>
                         </td>
                     </tr>

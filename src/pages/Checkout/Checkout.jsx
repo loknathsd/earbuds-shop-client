@@ -13,7 +13,6 @@ const Checkout = () => {
                 <span className="h-10 w-10 rounded-full bg-blue-700"></span>
                 <h2 className="font-medium text-gray-900">BambooYou</h2>
               </div>
-      
               <div>
                 <p className="text-2xl font-medium tracking-tight text-gray-900">Total Price :
                   ${totalPrice}
@@ -45,7 +44,7 @@ const Checkout = () => {
           </div>
           <div className=" py-5 md:py-24 border border-gray-200">
             <div className="mx-auto max-w-lg px-4 lg:px-8 ">
-            <Form cartItems={cartItems} />
+            <Form cartItems={cartItems} totalPrice={totalPrice} />
             </div>
           </div>
         </div>

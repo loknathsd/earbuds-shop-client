@@ -6,9 +6,7 @@ const Dashboard = () => {
     return (
         <div className='flex'>
             <Sidebar />
-            <div className="">
-                <Outlet />
-            </div>
+            <Outlet />
         </div>
     );
 };

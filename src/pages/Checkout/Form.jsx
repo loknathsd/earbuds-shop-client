@@ -4,11 +4,12 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-const Form = ({cartItems}) => {
+const Form = ({cartItems,totalPrice}) => {
     const { register,reset, handleSubmit} = useForm();
     const navigate = useNavigate();
     const onSubmit = async(data )=> {
         data.products = cartItems;
+        data.totalprice = totalPrice;
         const res = await axios.post('http://localhost:5000/order/add',data).catch(e=>toast.error(e?.response?.data?.message));
         if(res?.data){
             toast.success(res?.data?.message);

@@ -1,9 +1,8 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { useStateContext } from '../../context/StateContext'
-import {  Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import EmptyCart from './EmptyCart';
-
 
 export default function Cart() {
     const { totalPrice, showCart, setShowCart, totalQuantities, cartItems, removeProduct, toggleCartItemQuantity } = useStateContext();
@@ -62,7 +61,7 @@ export default function Cart() {
                                                             <li key={product.id} className="flex py-6">
                                                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                                     <img
-                                                                        src={product.imgUrl}
+                                                                        src={product?.imgUrl}
                                                                         alt={product.imageAlt}
                                                                         className="h-full w-full object-cover object-center"
                                                                     />
@@ -71,15 +70,15 @@ export default function Cart() {
                                                                     <div>
                                                                         <div className="flex justify-between text-base font-medium text-gray-900">
                                                                             <h3>
-                                                                                <a href={product.href}>{product.name}</a>
+                                                                                <a href={product.href}>{product?.name}</a>
                                                                             </h3>
-                                                                            <p className="ml-4">${product.price}</p>
+                                                                            <p className="ml-4">${product?.price}</p>
                                                                         </div>
                                                                     </div>
                                                                     <div className="flex flex-1 items-end justify-between text-sm ">
                                                                         <div className='flex'>
                                                                             <button onClick={() => toggleCartItemQuantity(product._id, 'dec')} className="px-3  bg-gray-400 rounded text-red-600">-</button>
-                                                                            <p className="text-gray-500 px-2"> {product.quantity}</p>
+                                                                            <p className="text-gray-500 px-2"> {product?.quantity}</p>
                                                                             <button onClick={() => toggleCartItemQuantity(product._id, 'inc')} className="px-2 bg-gray-400 rounded text-red-600">+</button>
                                                                         </div>
 
