@@ -13,10 +13,10 @@ const Success = () => {
         setTotalPrice(0);
         setTotalQuantities(0);
         runFireWork();
-    },[])
+    },[setCartItems, setTotalPrice, setTotalQuantities])
     return (
        <div className='container'>
-         <div className='text-center mt-32 bg-gray-300 lg:w-[70%] md:w-[70%] mx-auto lg:p-20 md:py-10 max-sm:py-10 rounded-xl'>
+         <div className='text-center mt-16 bg-gray-300 lg:w-[70%] md:w-[70%] mx-auto lg:p-20 md:py-10 max-sm:py-10 rounded-xl'>
             <p className='mx-[45%] text-6xl text-green-600 '> <BsBagCheckFill /></p>
             <h1 className='text-5xl text-[#324d67] font-bold my-5'>Thank You For Your Purchase</h1>
             <p className='lead my-5 text-lg font-semibold'>Check your email inbox for the receipt.</p>

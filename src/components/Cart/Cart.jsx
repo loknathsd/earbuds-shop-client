@@ -56,13 +56,13 @@ export default function Cart() {
                                             {cartItems.length < 1 && <EmptyCart />}
                                             <div className="mt-8">
                                                 <div className="flow-root">
-                                                    <ul role="list" className="-my-6 divide-y divide-gray-200">
+                                                    <ul className="-my-6 divide-y divide-gray-200">
                                                         {cartItems.map((product) => (
                                                             <li key={product._id} className="flex py-6">
                                                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                                     <img
                                                                         src={product?.imgUrl}
-                                                                        alt={product.imageAlt}
+                                                                        alt={product?.imageAlt}
                                                                         className="h-full w-full object-cover object-center"
                                                                     />
                                                                 </div>
@@ -70,7 +70,7 @@ export default function Cart() {
                                                                     <div>
                                                                         <div className="flex justify-between text-base font-medium text-gray-900">
                                                                             <h3>
-                                                                                <a href={product.href}>{product?.name}</a>
+                                                                                <a href={product?.href}>{product?.name}</a>
                                                                             </h3>
                                                                             <p className="ml-4">${product?.price}</p>
                                                                         </div>

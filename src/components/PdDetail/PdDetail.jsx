@@ -11,7 +11,6 @@ const PdDetail = () => {
     const {qty,incQty,decQty,addCart,setShowCart } = useStateContext();
     const {id} = useParams();
     const handleBuy=()=>{
-        addCart(product,qty);
         setShowCart(true)
     }
     useEffect(()=>{

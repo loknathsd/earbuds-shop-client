@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa'
 import { BsCart } from 'react-icons/bs'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css'
 import { Badge } from '@mui/material';
 import { useStateContext } from '../../../context/StateContext';
@@ -11,6 +11,10 @@ import Cart from '../../Cart/Cart';
 const Navbar = () => {
     const [navMobile, setNavMobile] = useState(false);
     const { showCart, setShowCart, totalQuantities } = useStateContext();
+    const navigate = useNavigate();
+    const handleLoginButton=()=>{
+        navigate("/login")
+    }
     return (
         <div>
             <header className='relative z-20 mb-12 lg:mb-0'>
@@ -24,7 +28,7 @@ const Navbar = () => {
                                 <Link to='/'>Home</Link>
                                 <Link to='/products'>Products</Link>
                                 <Link to='/dashboard'>Dashboard</Link>
-                                <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
+                                <button onClick={handleLoginButton} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
                                     Login
                                 </button>
 
@@ -42,11 +46,9 @@ const Navbar = () => {
                                 <Link to='/'>Home</Link>
                                 <Link to='/products'>Products</Link>
                                 <Link to='/dashboard'>Dashboard</Link>
-                                <Link to="/login">
-                                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                                        Login
-                                    </button>
-                                </Link>
+                                <button onClick={handleLoginButton} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                    Login
+                                </button>
                             </div>
                         </div>
                         <div onClick={() => setNavMobile(!navMobile)} className='mt-2 text-2xl lg:hidden px-3'>
