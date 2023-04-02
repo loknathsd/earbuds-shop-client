@@ -7,12 +7,8 @@ const Checkout = () => {
     return (
       <section>
         <div className="mx-auto grid max-w-screen-lg px-16 grid-cols-1 md:grid-cols-2 bg-gray-50">
-          <div className=" py-12 md:py-24">
+          <div className=" py-4 md:py-12">
             <div className="mx-auto max-w-lg space-y-8 px-4 lg:px-8">
-              <div className="flex items-center gap-4">
-                <span className="h-10 w-10 rounded-full bg-blue-700"></span>
-                <h2 className="font-medium text-gray-900">BambooYou</h2>
-              </div>
               <div>
                 <p className="text-2xl font-medium tracking-tight text-gray-900">Total Price :
                   ${totalPrice}
@@ -29,8 +25,8 @@ const Checkout = () => {
                         className="h-16 w-16 rounded object-cover"
                       />
                       <div>
-                        <h3 className="text-lg text-gray-900">{item.name}</h3>
-                        <dl className="mt-0.5 space-y-px  text-gray-600">
+                        <h3 className="text-md text-gray-800 font-bold">{item.name}</h3>
+                        <dl className="mt-0.5 space-y-px  text-gray-600 font-semibold">
                           <div>
                             <dt className="inline">Qty : {item.quantity}</dt>
                           </div>

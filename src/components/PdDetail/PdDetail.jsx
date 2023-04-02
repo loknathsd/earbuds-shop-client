@@ -4,6 +4,7 @@ import { useStateContext } from '../../context/StateContext';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
+import Loader from '../Shared/Loader/Loader';
 
 const PdDetail = () => {
     const [product,setProduct] = useState({})
@@ -22,6 +23,7 @@ const PdDetail = () => {
         <div className='container mx-auto lg:flex gap-10  mt-8'>
             <div className='img-area lg:w-[400px] lg:h-[420px] lg:m-0 md:m-5 max-sm:h-[350px] max-sm:w-[350px] max-sm:mx-auto bg-[#ebebeb] rounded-lg hover:bg-[#f02d34] p-5 cursor-pointer'>
                 <img src={product.imgUrl} alt="" />
+                {!product.imgUrl && <Loader />}
             </div>
             <div id='info-area' className='lg:w-[60%] text-[#324d67] lg:m-0 md:m-5 max-sm:m-5'>
                 <h1 className=' text-4xl font-bold capitalize'>{product.name}</h1>

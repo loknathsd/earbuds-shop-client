@@ -19,7 +19,7 @@ const Products = () => {
           {  products.length === 0 ? <Loader  /> :
             <div className='grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 justify-items-center'>
                {
-                products.map(pd=><Product  pd={pd} key={pd.id} />)
+                products.map(pd=><Product  pd={pd} key={pd._id} />)
                }
             </div>}
         </div>

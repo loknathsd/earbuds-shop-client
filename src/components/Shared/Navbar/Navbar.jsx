@@ -30,11 +30,11 @@ const Navbar = () => {
 
                             </div>
                             <p className='mr-10 text-2xl cursor-pointer'>
-                                <Badge onClick={()=>setShowCart(true)} badgeContent={totalQuantities} color="secondary" showZero>
+                                <Badge onClick={() => setShowCart(true)} badgeContent={totalQuantities} color="secondary" showZero>
                                     <BsCart />
                                 </Badge>
                             </p>
-                           {showCart && <Cart />}
+                            {showCart && <Cart />}
                         </div>
                         {/* mobile responsive item */}
                         <div className={`${navMobile ? 'max-h-96' : 'max-h-0'} lg:hidden bg-gray-400 absolute top-16 w-full left-0 right-0  rounded transition-all overflow-hidden`}>
@@ -42,9 +42,11 @@ const Navbar = () => {
                                 <Link to='/'>Home</Link>
                                 <Link to='/products'>Products</Link>
                                 <Link to='/dashboard'>Dashboard</Link>
-                                <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                                    Login
-                                </button>
+                                <Link to="/login">
+                                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                        Login
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                         <div onClick={() => setNavMobile(!navMobile)} className='mt-2 text-2xl lg:hidden px-3'>

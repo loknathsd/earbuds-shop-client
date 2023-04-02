@@ -5,8 +5,8 @@ import { AiFillDelete } from 'react-icons/ai';
 import Loader from '../../Shared/Loader/Loader';
 
 const Orders = () => {
-    const [orders,setOrders] = useState([]);
-
+    const [orders,setOrders] = useState([]); 
+    const qty =(products)=> products.reduce((prev,cur)=>prev+cur.quantity,0);
     useEffect(()=>{
         fetch("http://localhost:5000/order")
         .then(res=>res.json())
@@ -51,7 +51,7 @@ const Orders = () => {
                             {order.email}
                         </td>
                         <td className="px-6 py-4">
-                            {order?.products.length}
+                            {qty(order?.products)}
                         </td>
                         <td className="px-6 py-4">
                             ${order.totalprice}

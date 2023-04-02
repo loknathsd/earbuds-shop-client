@@ -11,7 +11,7 @@ const AddProduct = () => {
     const [imgUrl, setImgUrl] = useState("");
     const [description, setDescription] = useState("");
     const { id } = useParams();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (id) {
