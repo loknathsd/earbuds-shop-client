@@ -1,12 +1,20 @@
+import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
     const { register,reset, handleSubmit} = useForm();
+    const navigate = useNavigate()
 
-    const onSubmit=(data)=>{
-        console.log(data);
+    const onSubmit=async(data)=>{
+        const res = await axios.post("http://localhost:5000/user/signup",data).catch(e=>toast.error(e?.response?.data?.message));
+        if(res?.data){
+            reset();
+            toast.success("Signup successful !!");
+            navigate('/login');
+        }
     }
     return (
         <section className="bg-gray-50">
@@ -30,8 +38,8 @@ const Register = () => {
                                 <input {...register("password", { required: true})} type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5" required />
                             </div>
                             <div>
-                                <label  className="block mb-2 text-sm font-medium text-gray-900">Password</label>
-                                <input {...register("confirmPassword", { required: true})} type="password" name="confirmPassword"  placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5" required />
+                                <label  className="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
+                                <input {...register("phone", { required: true})} type="number" name="phone"  placeholder="Enter Phone number" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5" required />
                             </div>
                          
                             <div className="flex items-start">

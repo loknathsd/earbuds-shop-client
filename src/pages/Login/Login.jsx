@@ -1,12 +1,25 @@
+import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { register,reset, handleSubmit} = useForm();
-
-    const onSubmit=(data)=>{
+    const navigate = useNavigate();
+    
+    const onSubmit=async(data)=>{
         console.log(data);
+        const response = await axios.post("http://localhost:5000/user/signin",data).catch(e=>toast.error(e?.response?.data?.message))
+        if (response?.data) {
+            const { token } = response.data;
+            localStorage.setItem("token", token); // save token to local storage
+            console.log(response.data);
+            reset();
+            toast.success("Logged in successfully");
+            // navigate(-1)
+          }
+        
     }
 
     return (
