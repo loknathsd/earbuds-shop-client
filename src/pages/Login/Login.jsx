@@ -2,24 +2,26 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useStateContext } from '../../context/StateContext';
 
 const Login = () => {
-    const { register,reset, handleSubmit} = useForm();
+    const { register, reset, handleSubmit } = useForm();
     const navigate = useNavigate();
-    
-    const onSubmit=async(data)=>{
-        console.log(data);
-        const response = await axios.post("http://localhost:5000/user/signin",data).catch(e=>toast.error(e?.response?.data?.message))
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+    const { login } = useStateContext()
+
+    const onSubmit = async (data) => {
+        const response = await axios.post("http://localhost:5000/user/signin", data).catch(e => toast.error(e?.response?.data?.message))
         if (response?.data) {
             const { token } = response.data;
-            localStorage.setItem("token", token); // save token to local storage
-            console.log(response.data);
+            login(token)
+            // save token to local storage
             reset();
             toast.success("Logged in successfully");
-            // navigate(-1)
-          }
-        
+            navigate(from, { replace: true });
+        }
     }
 
     return (
@@ -48,7 +50,7 @@ const Login = () => {
                                         <label htmlFor="remember" className="text-gray-500 dark:text-gray-300">Remember me</label>
                                     </div>
                                 </div>
-                                <p  className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</p>
+                                <p className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</p>
                             </div>
                             <button type="submit" className="w-full bg-blue-700 text-white  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
                             <p className="text-lg font-semibold text-gray-500 ">

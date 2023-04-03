@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaBars } from 'react-icons/fa'
 import { BsCart } from 'react-icons/bs'
+import { BiUserCircle } from 'react-icons/bi'
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css'
 import { Badge } from '@mui/material';
@@ -10,10 +11,13 @@ import Cart from '../../Cart/Cart';
 
 const Navbar = () => {
     const [navMobile, setNavMobile] = useState(false);
-    const { showCart, setShowCart, totalQuantities } = useStateContext();
+    const { showCart, setShowCart, totalQuantities, logout, user } = useStateContext();
     const navigate = useNavigate();
-    const handleLoginButton=()=>{
+    const handleLoginButton = () => {
         navigate("/login")
+    }
+    const handleLogOutButton = () => {
+        logout()
     }
     return (
         <div>
@@ -24,13 +28,23 @@ const Navbar = () => {
                             <Link to="/">
                                 <h1 className='ml-5'>PHANOX</h1>
                             </Link>
-                            <div className='hidden lg:flex gap-x-16'>
+                            <div className='hidden lg:flex gap-x-20'>
                                 <Link to='/'>Home</Link>
                                 <Link to='/products'>Products</Link>
                                 <Link to='/dashboard'>Dashboard</Link>
-                                <button onClick={handleLoginButton} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
+                                {!user ? <button onClick={handleLoginButton} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
                                     Login
                                 </button>
+                                    :
+                                    <div className='flex gap-x-1'>
+                                        <BiUserCircle className='text-3xl text-gray-500'/>
+                                        <p className='mr-12 text-md font-semibold'>{user.email}</p>
+                                        <button onClick={handleLogOutButton} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
+                                            LogOut
+                                        </button>
+                                        
+                                    </div>
+                                }
 
                             </div>
                             <p className='mr-10 text-2xl cursor-pointer'>
@@ -46,9 +60,21 @@ const Navbar = () => {
                                 <Link to='/'>Home</Link>
                                 <Link to='/products'>Products</Link>
                                 <Link to='/dashboard'>Dashboard</Link>
-                                <button onClick={handleLoginButton} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                {!user ? <button onClick={handleLoginButton} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
                                     Login
                                 </button>
+                                    :
+                                    <div className=''>
+                                       <div className='flex gap-x-1 mb-4'>
+                                       <BiUserCircle className='text-3xl text-gray-500'/>
+                                        <p className='text-lg'>{user.email}</p>
+                                       </div>
+                                        <button onClick={handleLogOutButton} className=" w-full bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
+                                            LogOut
+                                        </button>
+                                        
+                                    </div>
+                                }
                             </div>
                         </div>
                         <div onClick={() => setNavMobile(!navMobile)} className='mt-2 text-2xl lg:hidden px-3'>

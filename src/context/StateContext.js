@@ -1,5 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { toast } from "react-hot-toast";
+import jwt_decode from 'jwt-decode';
+import { useEffect } from "react";
 
 
 
@@ -11,6 +13,8 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
+  const [user, setUser] = useState(null);
+  const [loading,setLoading] = useState(true);
 
   let foundProduct;
   let index;
@@ -77,6 +81,35 @@ export const StateContext = ({ children }) => {
       }
     })
   }
+
+  //for user 
+  useEffect(() => {
+    // check for token in local storage
+    setLoading(false)
+    const token = localStorage.getItem('token');
+    if (token) {
+      // decode token and set user
+      const decodedToken = jwt_decode(token);
+      setUser(decodedToken);
+    }
+  }, []);
+
+  const login = (token) => {
+    // decode token and set user
+    setLoading(false)
+    const decodedToken = jwt_decode(token);
+    setUser(decodedToken);
+    // save token to local storage
+    localStorage.setItem('token', token);
+  };
+
+  const logout = () => {
+    // remove user and token from state and local storage
+    setUser(null);
+    localStorage.removeItem('token');
+  };
+
+
   return (
     <Context.Provider
       value={{
@@ -93,7 +126,11 @@ export const StateContext = ({ children }) => {
         decQty,
         addCart,
         toggleCartItemQuantity,
-        removeProduct
+        removeProduct,
+        user,
+        login,
+        logout,
+        loading
 
       }}
     >

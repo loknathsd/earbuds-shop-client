@@ -24,7 +24,11 @@ const Routing = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path="products" element={<Products />} />
-                <Route path="/product-detail/:id" element={<ProtectedRoute><ProductDetail/> </ProtectedRoute>} />
+                <Route element={<ProtectedRoute />}>
+                    <Route path="/product-detail/:id" element={<ProductDetail/>} />
+                    
+                </Route>
+                {/* <Route path="/product-detail/:id" element={<ProtectedRoute><ProductDetail/> </ProtectedRoute>} /> */}
                <Route path='/checkout' element={<Checkout />} />
                 <Route path='/success' element={<Success />} />
                 <Route path="/login" element={<Login />} />
