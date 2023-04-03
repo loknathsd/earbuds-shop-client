@@ -11,7 +11,6 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
     const { login } = useStateContext();
-    console.log(from);
     const adminEmail = 'admin@admin.com'
     const adminPassword = 'admin'
 
