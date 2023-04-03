@@ -15,6 +15,7 @@ import ProductDetail from '../../pages/ProductDetail/ProductDetail';
 import Products from '../../pages/Products/Products';
 import Register from '../../pages/Register/Register';
 import Success from '../../pages/Success/Success';
+import ProtectAdmin from './ProtectAdmin';
 import ProtectedRoute from './ProtectedRoute';
 
 const Routing = () => {
@@ -24,24 +25,24 @@ const Routing = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path="products" element={<Products />} />
-                <Route element={<ProtectedRoute />}>
-                    <Route path="/product-detail/:id" element={<ProductDetail/>} />
-                    
-                </Route>
-                {/* <Route path="/product-detail/:id" element={<ProtectedRoute><ProductDetail/> </ProtectedRoute>} /> */}
-               <Route path='/checkout' element={<Checkout />} />
+                <Route path="/product-detail/:id" element={<ProductDetail />} />
                 <Route path='/success' element={<Success />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path='/dashboard' element={<Dashboard />} >
-                    <Route path="/dashboard" element={<Navigate replace to="profile" ></Navigate>} />
-                    <Route path="profile" element={<Profile />} />
-                    <Route path="add" element={<AddProduct />} />
-                    <Route path="edit/:id" element={<AddProduct />} />
-                    <Route path="products" element={<ProductsAll />} />
-                    <Route path="orders" element={<Orders />} />
-                    <Route path="users" element={<Users />} />
-                    <Route path="" element={<Home />} />
+                <Route element={<ProtectedRoute />}>
+                    <Route path='/checkout' element={<Checkout />} />
+                </Route>
+                <Route element={<ProtectAdmin />}>
+                    <Route path='/dashboard' element={<Dashboard />} >
+                        <Route path="/dashboard" element={<Navigate replace to="profile" ></Navigate>} />
+                        <Route path="profile" element={<Profile />} />
+                        <Route path="add" element={<AddProduct />} />
+                        <Route path="edit/:id" element={<AddProduct />} />
+                        <Route path="products" element={<ProductsAll />} />
+                        <Route path="orders" element={<Orders />} />
+                        <Route path="users" element={<Users />} />
+                        <Route path="" element={<Home />} />
+                    </Route>
                 </Route>
             </Routes>
             <Footer />

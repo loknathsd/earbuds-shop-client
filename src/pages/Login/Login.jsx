@@ -10,7 +10,10 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
-    const { login } = useStateContext()
+    const { login } = useStateContext();
+    console.log(from);
+    const adminEmail = 'admin@admin.com'
+    const adminPassword = 'admin'
 
     const onSubmit = async (data) => {
         const response = await axios.post("http://localhost:5000/user/signin", data).catch(e => toast.error(e?.response?.data?.message))
@@ -30,16 +33,16 @@ const Login = () => {
                 <div className="w-full bg-white rounded-lg shadow  md:-mt-16 sm:max-w-md xl:p-0">
                     <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h1 className="text-xl font-bold leading-tight text-center tracking-tight text-gray-900 md:text-2xl">
-                            Sign in to your account
+                            Sign in  {from==='/dashboard' ? 'as Admin' :'to your account'}
                         </h1>
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 md:space-y-6" action="#">
                             <div>
                                 <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>
-                                <input {...register("email", { required: true, pattern: /^\S+@\S+$/i })} type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="name@gmail.com" required />
+                                <input defaultValue={from ==='/dashboard' ? adminEmail : null} {...register("email", { required: true, pattern: /^\S+@\S+$/i })} type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="name@gmail.com" required />
                             </div>
                             <div>
                                 <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 ">Password</label>
-                                <input {...register("password", { required: true })} type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required />
+                                <input defaultValue={from ==='/dashboard' ? adminPassword : null}  {...register("password", { required: true })} type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required />
                             </div>
                             <div className="flex items-center justify-between">
                                 <div className="flex items-start">

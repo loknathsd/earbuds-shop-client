@@ -8,16 +8,15 @@ import { Badge } from '@mui/material';
 import { useStateContext } from '../../../context/StateContext';
 import Cart from '../../Cart/Cart';
 
-
 const Navbar = () => {
     const [navMobile, setNavMobile] = useState(false);
     const { showCart, setShowCart, totalQuantities, logout, user } = useStateContext();
     const navigate = useNavigate();
     const handleLoginButton = () => {
-        navigate("/login")
+        navigate("/login");
     }
-    const handleLogOutButton = () => {
-        logout()
+     const handleLogOutButton = () => {
+        logout();
     }
     return (
         <div>
@@ -38,14 +37,12 @@ const Navbar = () => {
                                     :
                                     <div className='flex gap-x-1'>
                                         <BiUserCircle className='text-3xl text-gray-500'/>
-                                        <p className='mr-12 text-md font-semibold'>{user.email}</p>
+                                        <p className='mr-12 text-md font-semibold'>{user.name || user.email}</p>
                                         <button onClick={handleLogOutButton} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
                                             LogOut
-                                        </button>
-                                        
+                                        </button>                                       
                                     </div>
                                 }
-
                             </div>
                             <p className='mr-10 text-2xl cursor-pointer'>
                                 <Badge onClick={() => setShowCart(true)} badgeContent={totalQuantities} color="secondary" showZero>
@@ -67,12 +64,11 @@ const Navbar = () => {
                                     <div className=''>
                                        <div className='flex gap-x-1 mb-4'>
                                        <BiUserCircle className='text-3xl text-gray-500'/>
-                                        <p className='text-lg'>{user.email}</p>
+                                        <p className='text-lg'>{user.name || user.email}</p>
                                        </div>
                                         <button onClick={handleLogOutButton} className=" w-full bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
                                             LogOut
-                                        </button>
-                                        
+                                        </button>   
                                     </div>
                                 }
                             </div>
@@ -82,9 +78,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-
             </header>
-
         </div>
     );
 };
