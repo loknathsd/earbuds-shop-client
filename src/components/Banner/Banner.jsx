@@ -13,8 +13,8 @@ const Banner = () => {
             <div className='flex'>
                 <button className='bg-[#f02d34] px-[16px] py-[10px] rounded-md text-white max-sm:mt-10'>Shop Now</button>
                 <div className='absolute lg:right-[10%] lg:bottom-[5%] md:bottom-[10%] md:right-[8%] max-sm:bottom-[8%] max-sm:right-[10%] w-[300px] text-[#324d67] text-end'>
-                    <h3 className='font-bold'>Description</h3>
-                    <p className='text-[#5f5f5f] font-[100]'>The game begins here. With Immortal 1000D gaming headphones, don't just play the game - feel it, live it, and own it. Level up your audio game with 7.1 Channel</p>
+                    <h3 style={{fontFamily:'Anton'}} className='font-bold'>Description</h3>
+                    <p style={{fontFamily:'Teko'}} className='text-[#5f5f5f] font-[100]'>The game begins here. With Immortal 1000D gaming headphones, don't just play the game - feel it, live it, and own it. Level up your audio game with 7.1 Channel</p>
                 </div>
             </div> 
         </div>

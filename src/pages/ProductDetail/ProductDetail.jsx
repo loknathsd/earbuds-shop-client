@@ -17,7 +17,7 @@ const ProductDetail = () => {
         <div className=''>
             <PdDetail />
             <div className=' container  mx-auto text-center mt-24 mb-12'>
-                <h1 className='capitalize text-[#324d67] text-[28px] font-bold mb-12'>you may also like</h1>
+                <h1 style={{fontFamily:'anton'}} className='capitalize text-[#324d67] text-[28px]  mb-12'>you may also like</h1>
                 {products.length===0 ? <Loader /> : <Marquee  pauseOnHover={true} gradient={false} speed={50}>
                        <div className='flex gap-x-6'>
                        {

@@ -11,6 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Rokkitt&family=Teko:wght@300&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

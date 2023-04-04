@@ -7,6 +7,7 @@ import './Navbar.css'
 import { Badge } from '@mui/material';
 import { useStateContext } from '../../../context/StateContext';
 import Cart from '../../Cart/Cart';
+import Logo from '../../../assets/images.png'
 
 const Navbar = () => {
     const [navMobile, setNavMobile] = useState(false);
@@ -25,20 +26,20 @@ const Navbar = () => {
                     <div className='flex items-center justify-between relative py-3 '>
                         <div className='flex justify-between container mx-auto pt-2 '>
                             <Link to="/">
-                                <h1 className='ml-5'>E-Shop</h1>
+                                <img className='w-24 -mt-3 ml-5' src={Logo} alt="E-shop" />
                             </Link>
-                            <div className='hidden lg:flex gap-x-20 '>
+                            <div style={{fontFamily:'Anton'}} className='hidden lg:flex gap-x-20 text-lg  text-[#324d67] '>
                                 <Link to='/'>Home</Link>
                                 <Link to='/products'>Products</Link>
                                 <Link to='/dashboard'>Dashboard</Link>
-                                {!user ? <button onClick={handleLoginButton} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
+                                {!user ? <button onClick={handleLoginButton} className="-mt-1 bg-transparent hover:bg-blue-500 text-blue-700 hover:text-white  px-4 border border-blue-500 hover:border-transparent rounded">
                                     Login
                                 </button>
                                     :
                                     <div className='flex gap-x-1'>
                                         <BiUserCircle className='text-3xl text-gray-500'/>
-                                        <p className='mr-24 text-md font-semibold'>{user.name || user.email}</p>
-                                        <button onClick={handleLogOutButton} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
+                                        <p className='mr-24 text-md'>{user.name || user.email}</p>
+                                        <button onClick={handleLogOutButton} className="-mt-1 bg-transparent hover:bg-blue-500 text-blue-700  hover:text-white  px-4 border border-blue-500 hover:border-transparent rounded">
                                             LogOut
                                         </button>                                       
                                     </div>

@@ -24,16 +24,16 @@ const PdDetail = () => {
                 <img src={product.imgUrl} alt="" />
                 {!product.imgUrl && <Loader />}
             </div>
-            <div id='info-area' className='lg:w-[60%] text-[#324d67] lg:m-0 md:m-5 max-sm:m-5'>
+            <div style={{fontFamily:'teko'}} id='info-area' className='lg:w-[60%] text-[#324d67] lg:m-0 md:m-5 max-sm:m-5'>
                 <h1 className=' text-4xl font-bold capitalize'>{product.name}</h1>
                 <p className='my-2'> <Rating defaultValue={3} readOnly /> </p>
                 <div>
-                    <h5 className="text-base font-bold my-1">Details :</h5>
-                    <p>{product.description}</p>
+                    <h5 className="text-lg font-bold my-1">Details :</h5>
+                    <p style={{fontFamily:'rokkitt'}} className='text-md font-semibold text-gray-600'>{product.description}</p>
                 </div>
                 <h1 className='text-3xl text-[#f02d34] font-[700] my-3'>${product.price}</h1>
                 <div id='quantity' className='flex gap-6 '>   
-                    <h2 className='text-2xl font-bold'>Quantity :</h2>
+                    <h2 className='text-2xl mt-1 font-bold'>Quantity :</h2>
                     <div className='inline-flex rounded-md shadow-sm'>
                         <button onClick={decQty} className='px-5 py-2 text-xl font-medium text-gray-900 bg-gray-200 border border-gray-200 rounded-l-lg '>-</button>
                         <button className='px-5 py-2 text-xl font-medium text-gray-900 bg-white border-t border-b border-gray-200'>{qty}</button>
