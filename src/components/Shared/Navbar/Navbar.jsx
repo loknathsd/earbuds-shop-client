@@ -25,9 +25,9 @@ const Navbar = () => {
                     <div className='flex items-center justify-between relative py-3 '>
                         <div className='flex justify-between container mx-auto pt-2 '>
                             <Link to="/">
-                                <h1 className='ml-5'>PHANOX</h1>
+                                <h1 className='ml-5'>E-Shop</h1>
                             </Link>
-                            <div className='hidden lg:flex gap-x-20'>
+                            <div className='hidden lg:flex gap-x-20 '>
                                 <Link to='/'>Home</Link>
                                 <Link to='/products'>Products</Link>
                                 <Link to='/dashboard'>Dashboard</Link>
@@ -37,7 +37,7 @@ const Navbar = () => {
                                     :
                                     <div className='flex gap-x-1'>
                                         <BiUserCircle className='text-3xl text-gray-500'/>
-                                        <p className='mr-12 text-md font-semibold'>{user.name || user.email}</p>
+                                        <p className='mr-24 text-md font-semibold'>{user.name || user.email}</p>
                                         <button onClick={handleLogOutButton} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
                                             LogOut
                                         </button>                                       

@@ -6,7 +6,7 @@ import ProductsAll from '../../components/Dashboard/ProductsAll/ProductsAll';
 import Profile from '../../components/Dashboard/Profile/Profile';
 import Footer from '../../components/Shared/Footer/Footer';
 import Navbar from '../../components/Shared/Navbar/Navbar';
-import Users from '../../components/Users/Users';
+import Users from '../../components/Dashboard/Users/Users';
 import Checkout from '../../pages/Checkout/Checkout';
 import Dashboard from '../../pages/Dashboard/Dashboard';
 import Home from '../../pages/Home/Home';

@@ -11,6 +11,7 @@ import { BsFillCartCheckFill } from 'react-icons/bs';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 import { FiUsers } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import { useStateContext } from '../../context/StateContext';
 
 const Menus = [
   { title: 'Dashboard', path: '', icon: <MdOutlineDashboard /> },
@@ -25,10 +26,15 @@ const Menus = [
 const Sidebar = () => {
   const [open, setOpen] = useState(true);
   const location = useLocation();
+  const {logout} = useStateContext();
 
   const toggleSidebar = () => {
     setOpen(!open);
   };
+  const handleLogout =()=>{
+    logout();
+    
+  }
 
   return (
     <div className="flex items-end justify-start ">
@@ -47,6 +53,7 @@ const Sidebar = () => {
                 className={`flex rounded-md p-2 cursor-pointer text-white text-sm items-center gap-x-4 ${
                   location.pathname === `/dashboard/${Menu.path}` ? 'bg-teal-400' : ''
                 }`}
+                onClick={Menu.title === "Logout" ?  handleLogout : null}
               >
                 <span>{Menu.icon}</span>
                 <span className="flex-1">{Menu.title}</span>
