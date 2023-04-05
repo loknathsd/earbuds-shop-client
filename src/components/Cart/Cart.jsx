@@ -41,25 +41,24 @@ export default function Cart() {
                                     <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                                         <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                                             <div className="flex items-start justify-between">
-                                                <Dialog.Title className="text-lg font-medium text-gray-900">Shopping cart ({totalQuantities} items)</Dialog.Title>
-                                                <div className="ml-3 flex h-7 items-center">
+                                                <Dialog.Title style={{fontFamily:'teko'}} className="text-xl font-bold text-gray-900">Shopping cart ({totalQuantities} items)</Dialog.Title>
+                                                <div  className="ml-3 flex h-7 items-center">
                                                     <button
                                                         type="button"
                                                         className="px-2 rounded text-red-600 border border-red-600 "
                                                         onClick={() => setShowCart(false)}
                                                     >
                                                         <span className="">X</span>
-                                                        {/* <XMarkIcon className="h-6 w-6" aria-hidden="true" /> */}
                                                     </button>
                                                 </div>
                                             </div>
                                             {cartItems.length < 1 && <EmptyCart />}
                                             <div className="mt-8">
                                                 <div className="flow-root">
-                                                    <ul className="-my-6 divide-y divide-gray-200">
+                                                    <div className="-my-6 divide-y divide-gray-200">
                                                         {cartItems.map((product) => (
-                                                            <li key={product._id} className="flex py-6">
-                                                                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                            <div style={{fontFamily:'rokkitt'}} key={product?._id} className="flex py-6">
+                                                                <div  className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                                     <img
                                                                         src={product?.imgUrl}
                                                                         alt={product?.imageAlt}
@@ -93,22 +92,22 @@ export default function Cart() {
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </li>
+                                                            </div>
                                                         ))}
-                                                    </ul>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        {cartItems.length >= 1 && <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
-                                            <div className="flex justify-between text-base font-medium text-gray-900">
+                                        {cartItems.length >= 1 && <div style={{fontFamily:'teko'}} className="border-t border-gray-200 py-6 px-4 sm:px-6">
+                                            <div  className="flex justify-between text-lg font-bold text-gray-900">
                                                 <p>Subtotal</p>
                                                 <p>${totalPrice}</p>
                                             </div>
-                                            <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+                                            <p className="mt-0.5 text-md text-gray-500">Shipping and taxes calculated at checkout.</p>
                                             <div className="mt-6 text-center">
                                                 <button
                                                    onClick={handleCheckout}
-                                                    className="rounded-md border border-transparent bg-indigo-600 px-6 w-full py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                                                    className="rounded-md border border-transparent bg-indigo-600 px-6 w-full py-2 text-xl font-semibold text-white shadow-sm hover:bg-indigo-700"
                                                 >
                                                     Checkout
                                                 </button>

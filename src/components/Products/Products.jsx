@@ -12,8 +12,8 @@ const Products = () => {
     },[])
     return (
         <div className='container text-center mx-auto'>
-            <div className='mt-16 mb-10 text-[#324d67]'>
-                <h1 className='text-5xl font-bold mb-2 '>Best Seller Products</h1>
+            <div className='mt-20 mb-16 text-[#324d67]'>
+                <h1 style={{fontFamily:'anton'}} className='text-4xl  mb-2 '>Best Seller Products</h1>
                 <p className='text-xl'>speaker There are many variations passages</p>
             </div>
           {  products.length === 0 ? <Loader  /> :

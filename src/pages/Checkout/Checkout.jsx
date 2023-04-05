@@ -6,8 +6,8 @@ const Checkout = () => {
     const {cartItems,totalPrice} = useStateContext();
     return (
       <section>
-        <div className="mx-auto grid max-w-screen-lg px-16 grid-cols-1 md:grid-cols-2 bg-gray-50">
-          <div className=" py-4 md:py-12">
+        <div style={{fontFamily:"rokkitt"}} className="mx-auto grid max-w-screen-lg px-16 grid-cols-1 md:grid-cols-2 bg-gray-50 ">
+          <div className=" py-4 md:py-12 border border-gray-200">
             <div className="mx-auto max-w-lg space-y-8 px-4 lg:px-8">
               <div>
                 <p className="text-2xl font-medium tracking-tight text-gray-900">Total Price :

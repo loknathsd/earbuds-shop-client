@@ -28,7 +28,7 @@ const Navbar = () => {
                             <Link to="/">
                                 <img className='w-24 -mt-3 ml-5' src={Logo} alt="E-shop" />
                             </Link>
-                            <div style={{fontFamily:'Anton'}} className='hidden lg:flex gap-x-20 text-lg  text-[#324d67] '>
+                            <div style={{fontFamily:'Anton'}} className='hidden lg:flex gap-x-20 text-md  text-[#324d67] '>
                                 <Link to='/'>Home</Link>
                                 <Link to='/products'>Products</Link>
                                 <Link to='/dashboard'>Dashboard</Link>
@@ -37,7 +37,7 @@ const Navbar = () => {
                                 </button>
                                     :
                                     <div className='flex gap-x-1'>
-                                        <BiUserCircle className='text-3xl text-gray-500'/>
+                                        <BiUserCircle className='text-3xl -mt-1 text-gray-500'/>
                                         <p className='mr-24 text-md'>{user.name || user.email}</p>
                                         <button onClick={handleLogOutButton} className="-mt-1 bg-transparent hover:bg-blue-500 text-blue-700  hover:text-white  px-4 border border-blue-500 hover:border-transparent rounded">
                                             LogOut

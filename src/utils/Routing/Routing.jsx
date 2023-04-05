@@ -17,6 +17,7 @@ import Register from '../../pages/Register/Register';
 import Success from '../../pages/Success/Success';
 import ProtectAdmin from './ProtectAdmin';
 import ProtectedRoute from './ProtectedRoute';
+import NotFound from '../../pages/NotFound/NotFound';
 
 const Routing = () => {
     return (
@@ -29,6 +30,7 @@ const Routing = () => {
                 <Route path='/success' element={<Success />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="*" element={<NotFound />} />
                 <Route element={<ProtectedRoute />}>
                     <Route path='/checkout' element={<Checkout />} />
                 </Route>

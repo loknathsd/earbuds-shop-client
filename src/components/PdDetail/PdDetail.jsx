@@ -41,8 +41,8 @@ const PdDetail = () => {
                     </div>
                 </div>
                 <div id="addBuy" className='mt-6 flex gap-6 text-lg'> 
-                    <button onClick={()=>addCart(product,qty)} className='bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-5 border border-red-500 hover:border-transparent rounded'>Add to cart</button>
-                    <button onClick={handleBuy}  className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-5 border border-blue-500 hover:border-transparent rounded'>Buy now</button>
+                    <button onClick={()=>addCart(product,qty)} className='bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white py-2 px-5 border border-red-500 hover:border-transparent rounded'>Add to Cart</button>
+                    <button onClick={handleBuy}  className='bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-5 border border-blue-500 hover:border-transparent rounded'>Buy Now</button>
                 </div>
             </div>
         </div>

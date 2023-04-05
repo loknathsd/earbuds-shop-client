@@ -13,13 +13,12 @@ export const StateContext = ({ children }) => {
   const [qty, setQty] = useState(1);
   const [user, setUser] = useState(null);
   const [loading,setLoading] = useState(true);
+  let index;
   let foundProduct;
-  let index
   const toggleCartItemQuantity = (id, value) => {
     foundProduct = cartItems.find((item) => item._id === id)
     index = cartItems.findIndex((product) => product._id === id);
     const newCartItems = cartItems.filter((item) => item._id !== id)
-
     if (value === 'inc') {
       setCartItems([...newCartItems, { ...foundProduct, quantity: foundProduct.quantity + 1 }]);
       setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price)
