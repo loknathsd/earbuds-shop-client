@@ -7,7 +7,7 @@ import EmptyCart from './EmptyCart';
 export default function Cart() {
     const { totalPrice, showCart, setShowCart, totalQuantities, cartItems, removeProduct, toggleCartItemQuantity } = useStateContext();
     const navigate = useNavigate();
-    const handleCheckout=()=>{
+    const handleCheckout = () => {
         navigate("/checkout");
         setShowCart(false);
     }
@@ -41,8 +41,8 @@ export default function Cart() {
                                     <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
                                         <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                                             <div className="flex items-start justify-between">
-                                                <Dialog.Title style={{fontFamily:'teko'}} className="text-xl font-bold text-gray-900">Shopping cart ({totalQuantities} items)</Dialog.Title>
-                                                <div  className="ml-3 flex h-7 items-center">
+                                                <Dialog.Title style={{ fontFamily: 'teko' }} className="text-xl font-bold text-gray-900">Shopping cart ({totalQuantities} items)</Dialog.Title>
+                                                <div className="ml-3 flex h-7 items-center">
                                                     <button
                                                         type="button"
                                                         className="px-2 rounded text-red-600 border border-red-600 "
@@ -52,13 +52,13 @@ export default function Cart() {
                                                     </button>
                                                 </div>
                                             </div>
-                                            {cartItems.length < 1 && <EmptyCart />}
+                                            {cartItems?.length < 1 && <EmptyCart />}
                                             <div className="mt-8">
                                                 <div className="flow-root">
                                                     <div className="-my-6 divide-y divide-gray-200">
                                                         {cartItems.map((product) => (
-                                                            <div style={{fontFamily:'rokkitt'}} key={product?._id} className="flex py-6">
-                                                                <div  className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                                            <div style={{ fontFamily: 'rokkitt' }} key={product?._id} className="flex py-6">
+                                                                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                                     <img
                                                                         src={product?.imgUrl}
                                                                         alt={product?.imageAlt}
@@ -98,15 +98,15 @@ export default function Cart() {
                                                 </div>
                                             </div>
                                         </div>
-                                        {cartItems.length >= 1 && <div style={{fontFamily:'teko'}} className="border-t border-gray-200 py-6 px-4 sm:px-6">
-                                            <div  className="flex justify-between text-lg font-bold text-gray-900">
+                                        {cartItems.length >= 1 && <div style={{ fontFamily: 'teko' }} className="border-t border-gray-200 py-6 px-4 sm:px-6">
+                                            <div className="flex justify-between text-lg font-bold text-gray-900">
                                                 <p>Subtotal</p>
                                                 <p>${totalPrice}</p>
                                             </div>
                                             <p className="mt-0.5 text-md text-gray-500">Shipping and taxes calculated at checkout.</p>
                                             <div className="mt-6 text-center">
                                                 <button
-                                                   onClick={handleCheckout}
+                                                    onClick={handleCheckout}
                                                     className="rounded-md border border-transparent bg-indigo-600 px-6 w-full py-2 text-xl font-semibold text-white shadow-sm hover:bg-indigo-700"
                                                 >
                                                     Checkout

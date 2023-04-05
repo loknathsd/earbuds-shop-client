@@ -6,13 +6,16 @@ import { useEffect } from "react";
 const Context = createContext();
 
 export const StateContext = ({ children }) => {
+  const initialCart = [];
+  const initialQuantity = 0;
   const [showCart, setShowCart] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(initialCart);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [totalQuantities, setTotalQuantities] = useState(0);
+  const [totalQuantities, setTotalQuantities] = useState(initialQuantity);
   const [qty, setQty] = useState(1);
   const [user, setUser] = useState(null);
   const [loading,setLoading] = useState(true);
+
   let foundProduct;
   const toggleCartItemQuantity = (id, value) => {
     let foundProduct = cartItems.find((item) => item._id === id)
@@ -42,23 +45,22 @@ export const StateContext = ({ children }) => {
       }
     }
   }
-
+// remove product from cart
   const removeProduct = (product) => {
     foundProduct = cartItems.find((item) => item._id === product._id);
     const newCartItems = cartItems.filter((item) => item._id !== product._id);
-
     setTotalPrice((prevTotalPrice) => prevTotalPrice -foundProduct.price * foundProduct.quantity);
     setTotalQuantities(prevTotalQuantities => prevTotalQuantities - foundProduct.quantity);
     setCartItems(newCartItems);
   }
-
+// add product to cart
   const addCart = (product, quantity) => {
     const checkProductInCart = cartItems.find((item) => item._id === product._id);
     setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * quantity);
     setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
     if (checkProductInCart) {
       const updatedCartItems = cartItems.map((cartProduct) => {
-        if (cartProduct._id === product._id) return {
+        if (cartProduct._id === product._id) return{
           ...cartProduct,
           quantity: cartProduct.quantity + quantity
         }
@@ -68,13 +70,13 @@ export const StateContext = ({ children }) => {
       product.quantity = quantity;
       setCartItems([...cartItems, { ...product }]);
     }
-
     toast.success(`${qty} ${product.name} added to the cart.`);
   }
-
+//increment quantity
   const incQty = () => {
     setQty((prevQty) => prevQty + 1)
   }
+  //decrement quantity
   const decQty = () => {
     setQty((prevQty) => {
       if (prevQty > 0) {
@@ -85,6 +87,32 @@ export const StateContext = ({ children }) => {
       }
     })
   }
+  /** This will persist the cart items **/
+  useEffect(() => {
+     const cartData = JSON.parse(localStorage.getItem('cart'));
+     if (cartData) {
+        setCartItems(cartData);
+     }
+  }, []);
+
+  useEffect(() => {
+     if (cartItems !== initialCart) {
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+     }
+  }, [cartItems]);
+  /** This will persist the quantity **/
+  useEffect(() => {
+     const cartQuantity = JSON.parse(localStorage.getItem('quantity'));
+     if (cartQuantity) {
+        setTotalQuantities(cartQuantity);
+     }
+  }, []);
+
+  useEffect(() => {
+     if (totalQuantities !== initialQuantity) {
+        localStorage.setItem('quantity', JSON.stringify(totalQuantities));
+     }
+  }, [totalQuantities]);
 
   //for user 
   useEffect(() => {
@@ -103,7 +131,10 @@ export const StateContext = ({ children }) => {
   };
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('token');
+    setCartItems(null);
+    setTotalQuantities(initialQuantity);
+    localStorage.removeItem('token','cart');
+    localStorage.removeItem('quantity');
   };
   return (
     <Context.Provider
@@ -126,7 +157,6 @@ export const StateContext = ({ children }) => {
         login,
         logout,
         loading
-
       }}
     >
       {children}
