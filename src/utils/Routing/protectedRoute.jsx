@@ -9,7 +9,7 @@ const ProtectedRoute = () => {
     return <Loader />
   }
 return (
-    user ? <Outlet/> : <Navigate to='/login' state={{from:location}} replace/>
+    user && user.role==='user' ? <Outlet/> : <Navigate to='/login' state={{from:location}} replace/>
   )
 }
 

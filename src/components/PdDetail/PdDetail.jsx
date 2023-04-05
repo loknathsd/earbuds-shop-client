@@ -21,13 +21,13 @@ const PdDetail = () => {
     return (
         <div className='container mx-auto lg:flex gap-10  mt-8'>
             <div className='img-area lg:w-[400px] lg:h-[420px] lg:m-0 md:m-5 max-sm:h-[350px] max-sm:w-[350px] max-sm:mx-auto bg-[#ebebeb] rounded-lg hover:bg-[#f02d34] p-5 cursor-pointer'>
-                <img src={product.imgUrl} alt="" />
+                <img src={product.imgUrl} alt="Product img" />
                 {!product.imgUrl && <Loader />}
             </div>
             <div style={{fontFamily:'teko'}} id='info-area' className='lg:w-[60%] text-[#324d67] lg:m-0 md:m-5 max-sm:m-5'>
                 <h1 className=' text-4xl font-bold capitalize'>{product.name}</h1>
                 <p className='my-2'> <Rating defaultValue={3} readOnly /> </p>
-                <div>
+                <div  className='h-[150px] overflow-hidden'>
                     <h5 className="text-lg font-bold my-1">Details :</h5>
                     <p style={{fontFamily:'rokkitt'}} className='text-md font-semibold text-gray-600'>{product.description}</p>
                 </div>

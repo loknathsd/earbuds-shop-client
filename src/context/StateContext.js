@@ -51,6 +51,7 @@ export const StateContext = ({ children }) => {
     const newCartItems = cartItems.filter((item) => item._id !== product._id);
     setTotalPrice((prevTotalPrice) => prevTotalPrice -foundProduct.price * foundProduct.quantity);
     setTotalQuantities(prevTotalQuantities => prevTotalQuantities - foundProduct.quantity);
+    localStorage.removeItem('quantity');
     setCartItems(newCartItems);
   }
 // add product to cart
@@ -99,7 +100,7 @@ export const StateContext = ({ children }) => {
      if (cartItems !== initialCart) {
         localStorage.setItem('cart', JSON.stringify(cartItems));
      }
-  }, [cartItems]);
+  }, [initialCart,cartItems]);
   /** This will persist the quantity **/
   useEffect(() => {
      const cartQuantity = JSON.parse(localStorage.getItem('quantity'));
