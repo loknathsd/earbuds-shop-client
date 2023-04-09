@@ -23,7 +23,7 @@ const Users = () => {
         }
     }
     return (
-        <div style={{fontFamily:'rokkitt'}} className="relative overflow-y-scroll h-screen shadow-md sm:rounded-lg mx-16 mt-5 w-[100%]">
+        <div style={{fontFamily:'rokkitt'}} className="relative overflow-y-scroll h-screen shadow-md sm:rounded-lg lg:mx-16 mt-5 w-[100%]">
             <table className="w-full text-lg text-left text-gray-600 dark:text-gray-400">
                 <thead className="text-xs text-gray-700  uppercase bg-gray-300  dark:bg-gray-700 dark:text-gray-400">
                     <tr>
