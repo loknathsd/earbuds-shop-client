@@ -1,3 +1,3 @@
 Project name : E-shop
 
-description:
+description: This is an e-commerce website.
