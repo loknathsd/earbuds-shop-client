@@ -9,7 +9,7 @@ const ProductDetail = () => {
     const [products,setProducts] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:5000/product")
+        fetch("https://earbuds.onrender.com/product")
         .then(res=>res.json())
         .then(data=>setProducts(data))   
    },[])

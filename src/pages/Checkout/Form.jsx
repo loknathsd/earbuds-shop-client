@@ -12,7 +12,7 @@ const Form = ({cartItems,totalPrice}) => {
     const onSubmit = async(data )=> {
         data.products = cartItems;
         data.totalprice = totalPrice;
-        const res = await axios.post('http://localhost:5000/order/add',data).catch(e=>toast.error(e?.response?.data?.message));
+        const res = await axios.post('https://earbuds.onrender.com/order/add',data).catch(e=>toast.error(e?.response?.data?.message));
         if(res?.data){
             toast.success(res?.data?.message);
             reset();

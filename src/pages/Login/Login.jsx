@@ -15,7 +15,7 @@ const Login = () => {
     const adminPassword = process.env.REACT_APP_ADMIN_PASS;
 
     const onSubmit = async (data) => {
-        const response = await axios.post("http://localhost:5000/user/signin", data).catch(e => toast.error(e?.response?.data?.message))
+        const response = await axios.post("https://earbuds.onrender.com/user/signin", data).catch(e => toast.error(e?.response?.data?.message))
         if (response?.data) {
             const { token } = response.data;
             login(token)// save token to local storage

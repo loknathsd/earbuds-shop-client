@@ -15,7 +15,7 @@ const AddProduct = () => {
 
     useEffect(() => {
         if (id) {
-            axios.get(`http://localhost:5000/product/${id}`)
+            axios.get(`https://earbuds.onrender.com/product/${id}`)
                 .then((data) => {
                     const { name, price, imgUrl, description } = data?.data?.result[0];
                     setName(name);
@@ -37,12 +37,12 @@ const AddProduct = () => {
         try {
             const data = { name, price, imgUrl, description }
             if (id) {
-                const res = await axios.put(`http://localhost:5000/product/edit/${id}`, data);
+                const res = await axios.put(`https://earbuds.onrender.com/product/edit/${id}`, data);
                 toast.success(res?.data?.message);
                 reset();
                 navigate('/dashboard/products')
             } else {
-                const res = await axios.post("http://localhost:5000/product/add", data);
+                const res = await axios.post("https://earbuds.onrender.com/product/add", data);
                 if (res.data) {
                     reset();
                     toast.success(res?.data?.message)

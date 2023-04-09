@@ -9,12 +9,12 @@ const ProductsAll = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/product")
+        fetch("https://earbuds.onrender.com/product")
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
     const handleDelete =  (id) => {
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://earbuds.onrender.com/product/${id}`, {
             method: "DELETE"
         }).then(res => res.json())
         .then(data => {

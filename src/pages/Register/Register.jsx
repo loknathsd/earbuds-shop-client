@@ -9,7 +9,7 @@ const Register = () => {
     const navigate = useNavigate()
 
     const onSubmit=async(data)=>{
-        const res = await axios.post("http://localhost:5000/user/signup",data).catch(e=>toast.error(e?.response?.data?.message));
+        const res = await axios.post("https://earbuds.onrender.com/user/signup",data).catch(e=>toast.error(e?.response?.data?.message));
         if(res?.data){
             reset();
             toast.success("Signup successful !!");

@@ -8,13 +8,13 @@ const Users = () => {
     const [users, setUsers] = useState([]);
     const filterUsers = users.filter(fuser => fuser.role !== 'admin');
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://earbuds.onrender.com/user')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])
     const handleDelete = async(id) => {
         console.log(id);
-        const res = await axios.delete(`http://localhost:5000/user/${id}`).catch(e=>toast.error('Something went wrong'))
+        const res = await axios.delete(`https://earbuds.onrender.com/user/${id}`).catch(e=>toast.error('Something went wrong'))
         console.log(res,'res')
         if(res?.data){
             toast.success(res?.data?.message);

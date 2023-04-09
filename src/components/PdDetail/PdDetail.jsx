@@ -14,7 +14,7 @@ const PdDetail = () => {
         setShowCart(true)
     }
     useEffect(()=>{
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://earbuds.onrender.com/product/${id}`)
         .then(res=>res.json())
         .then(data=>setProduct(data.result[0]))
     },[id])
