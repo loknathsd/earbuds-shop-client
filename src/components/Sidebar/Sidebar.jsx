@@ -55,8 +55,8 @@ const Sidebar = () => {
                 }`}
                 onClick={Menu.title === "Logout" ?  handleLogout : null}
               >
-                <span>{Menu.icon}</span>
-                <span className="flex-1">{Menu.title}</span>
+               { <span>{Menu.icon}</span>}
+                {open &&<span className="flex-1">{Menu.title}</span>}
               </Link>
             </div>
           ))}
