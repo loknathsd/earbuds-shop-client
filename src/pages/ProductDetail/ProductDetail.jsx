@@ -8,6 +8,11 @@ import Loader from '../../components/Shared/Loader/Loader';
 const ProductDetail = () => {
     const [products,setProducts] = useState([]);
 
+    useEffect(() => {
+        // 👇️ scroll to top on page load
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      }, []);
+      
     useEffect(()=>{
         fetch("https://earbuds.onrender.com/product")
         .then(res=>res.json())

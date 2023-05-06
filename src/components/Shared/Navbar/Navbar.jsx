@@ -22,7 +22,7 @@ const Navbar = () => {
     return (
         <div>
             <header className='relative z-20 mb-12 lg:mb-0'>
-                <div className=" ">
+                <div className="">
                     <div className='flex items-center justify-between relative py-3 '>
                         <div className='flex justify-between container mx-auto pt-2 '>
                             <Link to="/">
@@ -54,7 +54,7 @@ const Navbar = () => {
                         </div>
                         {/* mobile responsive item */}
                         <div className={`${navMobile ? 'max-h-96' : 'max-h-0'} lg:hidden bg-gray-400 absolute top-16 w-full left-0 right-0  rounded transition-all overflow-hidden`}>
-                            <div className='p-8 flex flex-col gap-y-4'>
+                            <div className='p-8 flex flex-col gap-y-4 '>
                                 <Link to='/'>Home</Link>
                                 <Link to='/products'>Products</Link>
                                 <Link to='/dashboard'>Dashboard</Link>

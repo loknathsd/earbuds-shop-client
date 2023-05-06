@@ -51,7 +51,7 @@ export const StateContext = ({ children }) => {
     const newCartItems = cartItems.filter((item) => item._id !== product._id);
     setTotalPrice((prevTotalPrice) => prevTotalPrice -foundProduct.price * foundProduct.quantity);
     setTotalQuantities(prevTotalQuantities => prevTotalQuantities - foundProduct.quantity);
-    localStorage.removeItem('quantity');
+    sessionStorage.removeItem('quantity');
     setCartItems(newCartItems);
   }
 // add product to cart
@@ -90,7 +90,7 @@ export const StateContext = ({ children }) => {
   }
   /** This will persist the cart items **/
   useEffect(() => {
-     const cartData = JSON.parse(localStorage.getItem('cart'));
+     const cartData = JSON.parse(sessionStorage.getItem('cart'));
      if (cartData) {
         setCartItems(cartData);
      }
@@ -98,12 +98,12 @@ export const StateContext = ({ children }) => {
 
   useEffect(() => {
      if (cartItems !== initialCart) {
-        localStorage.setItem('cart', JSON.stringify(cartItems));
+        sessionStorage.setItem('cart', JSON.stringify(cartItems));
      }
   }, [initialCart,cartItems]);
   /** This will persist the quantity **/
   useEffect(() => {
-     const cartQuantity = JSON.parse(localStorage.getItem('quantity'));
+     const cartQuantity = JSON.parse(sessionStorage.getItem('quantity'));
      if (cartQuantity) {
         setTotalQuantities(cartQuantity);
      }
@@ -111,14 +111,14 @@ export const StateContext = ({ children }) => {
 
   useEffect(() => {
      if (totalQuantities !== initialQuantity) {
-        localStorage.setItem('quantity', JSON.stringify(totalQuantities));
+        sessionStorage.setItem('quantity', JSON.stringify(totalQuantities));
      }
   }, [totalQuantities]);
 
   //for user 
   useEffect(() => {
     setLoading(false)
-    const token = localStorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if (token) {
       const decodedToken = jwt_decode(token);
       setUser(decodedToken.user);
@@ -128,14 +128,14 @@ export const StateContext = ({ children }) => {
     setLoading(false)
     const decodedToken = jwt_decode(token);
     setUser(decodedToken.user);
-    localStorage.setItem('token', token);
+    sessionStorage.setItem('token', token);
   };
   const logout = () => {
     setUser(null);
     setCartItems(null);
     setTotalQuantities(initialQuantity);
-    localStorage.removeItem('token','cart');
-    localStorage.removeItem('quantity');
+    sessionStorage.removeItem('token','cart');
+    sessionStorage.removeItem('quantity');
   };
   return (
     <Context.Provider
