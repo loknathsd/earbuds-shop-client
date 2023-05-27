@@ -16,12 +16,12 @@ import Products from '../../pages/Products/Products';
 import Register from '../../pages/Register/Register';
 import Success from '../../pages/Success/Success';
 import ProtectAdmin from './ProtectAdmin';
-import ProtectedRoute from './ProtectedRoute';
 import NotFound from '../../pages/NotFound/NotFound';
+import PrivateRoute from './PrivateRoute';
 
 const Routing = () => {
     return (
-        <div>
+        <>
             <Navbar />
             <Routes>
                 <Route path='/' element={<Home />} />
@@ -31,7 +31,7 @@ const Routing = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="*" element={<NotFound />} />
-                <Route element={<ProtectedRoute />}>
+                <Route element={<PrivateRoute />}>
                     <Route path='/checkout' element={<Checkout />} />
                 </Route>
                 <Route element={<ProtectAdmin />}>
@@ -48,7 +48,7 @@ const Routing = () => {
                 </Route>
             </Routes>
             <Footer />
-        </div>
+        </>
     );
 };
 
