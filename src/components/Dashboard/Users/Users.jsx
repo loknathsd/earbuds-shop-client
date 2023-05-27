@@ -13,9 +13,7 @@ const Users = () => {
             .then(data => setUsers(data))
     }, [])
     const handleDelete = async(id) => {
-        console.log(id);
         const res = await axios.delete(`https://earbuds.onrender.com/user/${id}`).catch(e=>toast.error('Something went wrong'))
-        console.log(res,'res')
         if(res?.data){
             toast.success(res?.data?.message);
             let remainUser = filterUsers.filter(us=>us._id !== id);

@@ -4,13 +4,12 @@ import { useStateContext } from '../../context/StateContext';
 
 const ProtectedRoute = () => {
   const {user,loading} = useStateContext();
-  const location = useLocation()
+  const location = useLocation(); 
   if(loading){
     return <Loader />
   }
-return (
-    user && user.role==='user' ? <Outlet/> : <Navigate to='/login' state={{from:location}} replace/>
-  )
+return  user && user.role==='user' ? <Outlet/> : <Navigate to='/login' state={{from:location}} replace/>
+  
 }
 
-export default ProtectedRoute
+export default ProtectedRoute;
