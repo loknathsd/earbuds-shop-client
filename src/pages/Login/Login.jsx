@@ -11,8 +11,8 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
     const { login } = useStateContext();
-    const adminEmail = process.env.REACT_APP_ADMIN_EMAIL;
-    const adminPassword = process.env.REACT_APP_ADMIN_PASS;
+    const adminEmail = process.env.REACT_APP_ADMIN_EMAIL || "admin@admin.com";
+    const adminPassword = process.env.REACT_APP_ADMIN_PASS || "admin";
 
     const onSubmit = async (data) => {
         const response = await axios.post("https://earbuds.onrender.com/user/signin", data).catch(e => toast.error(e?.response?.data?.message))
